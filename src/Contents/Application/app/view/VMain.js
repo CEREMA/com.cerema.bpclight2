@@ -39,16 +39,8 @@ App.view.define('VMain', {
 			]		
 		},
 		{
-			region: "center",			
-			split:true,
-			layout: "fit",
-			items: [
-			{
-				border: false,
-				html: "hello world !",
-				padding: 10
-			}
-			]
+			region: "center",
+			xtype: "TPrincipal"
 		}
 	]
 	
