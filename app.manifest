@@ -1,23 +1,21 @@
 {
     "namespace": "com.cerema.bpclight2",
     "git": "",
-    "title": "tpl.omneedia.webapp",
-    "description": "Package description goes here",
+    "title": "BPCLight",
+    "description": "Base du personnel centralisée",
     "platform": "desktop",
     "targets": [
         "webapp"
     ],
     "uid": "e404d3a0-cc1d-418b-bd68-1ffef1b06551",
-    "version": "1.00",
-    "build": "0",
+    "version": "1.3.0",
+    "build": 133,
     "copyright": "Copyright (c) 2016 By OMNEEDIA",
     "license": "BSD",
     "author": {
-        "name": "XXX",
-        "mail": "xxx@xxx.com",
-        "twitter": "@xxx",
-        "web": "",
-        "github": ""
+        "name": "Stéphane Zucatti",
+        "mail": "stephane.zucatti@me.com",
+        "twitter": "@mydearsz"
     },
     "team": {
         "debugger": [],
@@ -57,7 +55,10 @@
     "api": [
         "MyService"
     ],
-    "db": [],
+    "db": [
+        "bpclight",
+        "temptation"
+    ],
     "packages": [],
     "icon": {
         "background": "#FFFFFF",
@@ -65,7 +66,7 @@
     },
     "splashscreen": {
         "background": "#FFFFFF",
-        "color": "orange",
+        "color": "#DBD267",
         "file": "app.png"
     },
     "server": {
