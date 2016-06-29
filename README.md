@@ -1,8 +1,8 @@
-# tpl.omneedia.webapp
+# BPCLight
 
-## tpl.omneedia.webapp
+## com.cerema.bpclight2
 
-Package description goes here
+Base du Personnel Centralisée
 
 Copyright (c) 2016 By OMNEEDIA
 
