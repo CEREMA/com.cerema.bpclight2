@@ -1,7 +1,8 @@
 App.controller.define('CMain', {
 
 	views: [
-		"VMain"
+		"VMain",
+		"VPrincipal"
 	],
 	
 	models: [
