@@ -16,6 +16,26 @@ App.view.define('VMain', {
 			xtype: "Menu",
 			itemId: "MenuPanel",
 			menu: [
+				{
+					text: "Agent",
+					menu: [
+						{
+							text: "Nouveau",
+							itemId: "MNU_AGENT_NEW"
+						}
+					]
+				},
+				{
+					text: "Visites médicales",
+					hidden: true,
+					id: "MNU_VM",
+					menu: [
+						{
+							text: "Rendez-vous",
+							itemId: "MNU_RDV"
+						}
+					]
+				}				
 			]		
 		},
 		{
