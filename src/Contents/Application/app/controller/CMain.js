@@ -102,7 +102,7 @@ App.controller.define('CMain', {
 	},
 	grid_ondblclick: function(p, record, item, index)
 	{
-		App.view.create('VForm1',{
+		App.view.create('VAgent',{
 			agent: record.data
 		}).show();
 	},
