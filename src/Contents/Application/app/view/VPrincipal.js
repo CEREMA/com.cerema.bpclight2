@@ -141,7 +141,6 @@ App.view.define('VPrincipal',{
 					width: 200,
 					triggers: {
                     	add: {
-                        	cls: 'x-fa fa-search',
                         	handler: function() {
                             	alert('add trigger clicked');
                         	}
