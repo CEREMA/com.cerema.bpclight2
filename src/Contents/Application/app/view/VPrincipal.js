@@ -141,7 +141,7 @@ App.view.define('VPrincipal',{
 					width: 200,
 					triggers: {
                     	search: {
-							cls: "ico_export",
+							css: Ext.baseCSSPrefix + 'form-search-trigger',
                         	handler: function() {
                             	alert('add trigger clicked');
                         	}
