@@ -1,5 +1,3 @@
-
-
 App.view.define('VRendezVous', {
     extend: "Ext.window.Window",
     alias: 'widget.VRendezVous',
