@@ -36,7 +36,7 @@ App.view.define('VPrincipal',{
 				}
 			})			
 		},
-{
+		{
 			xtype: "FilterBox",
 			itemId: "FilterPanel",
 			fields: [
