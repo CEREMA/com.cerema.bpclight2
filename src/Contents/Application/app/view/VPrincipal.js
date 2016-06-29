@@ -141,7 +141,7 @@ App.view.define('VPrincipal',{
 					width: 200,
 					triggers: {
                     	search: {
-							cls: 'x-form-clear-trigger',
+							cls: 'x-form-search-trigger',
                         	handler: function() {
                             	alert('add trigger clicked');
                         	}
