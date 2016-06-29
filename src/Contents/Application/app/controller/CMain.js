@@ -131,7 +131,6 @@ App.controller.define('CMain', {
 		App.Update.position(-1,function(err,response) {
 		});*/
 		Auth.login(function(x) {
-			console.log(x);
 			if (x.profiles.indexOf('SRH')>-1) Ext.getCmp('MNU_VM').show();
 		});
 
