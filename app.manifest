@@ -1,6 +1,6 @@
 {
     "namespace": "com.cerema.bpclight2",
-    "git": "",
+    "git": "https://github.com/CEREMA/com.cerema.bpclight2.git",
     "title": "BPCLight",
     "description": "Base du personnel centralisée",
     "platform": "desktop",
