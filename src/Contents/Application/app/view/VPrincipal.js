@@ -141,6 +141,7 @@ App.view.define('VPrincipal',{
 					width: 200,
 					triggers: {
                     	search: {
+							cls: "ico_export",
                         	handler: function() {
                             	alert('add trigger clicked');
                         	}
