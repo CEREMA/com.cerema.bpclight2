@@ -14,8 +14,8 @@ function parseJsonDate(jsonDate) {
 App.controller.define('CAgent', {
 
 	views: [
-		"VForm1",
-		"VShowFormation",
+		"VAgent",
+		//"VShowFormation",
 		"agent.VSidePanel",
 		"agent.VAgent",
 		"agent.VSituation",
