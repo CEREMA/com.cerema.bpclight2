@@ -13,9 +13,6 @@ App.controller.define('CMain', {
 		this.control({
 			"menu>menuitem": {
 				click: "Menu_onClick"
-			},
-			"button#clickme": {
-				click: "clickme_onclick"
 			}
 		});
 		
@@ -28,13 +25,24 @@ App.controller.define('CMain', {
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			
 	},
-	clickme_onclick: function()
-	{
-		Ext.Msg.alert('Omneedia','hello world!');
-	},
 	onLoad: function()
 	{
-		// form loaded	
+
+		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+		// update
+		App.Update.actif(-1,function(err,response) {
+			console.log(err);
+			console.log(response);		
+		});
+		App.Update.position(-1,function(err,response) {
+			/*console.log(err);
+			console.log(response);*/
+		});
+		Auth.login(function(x) {
+			console.log(x);
+			if (x.profiles.indexOf('SRH')>-1) Ext.getCmp('MNU_VM').show();
+		});
+
 	}
 	
 	
