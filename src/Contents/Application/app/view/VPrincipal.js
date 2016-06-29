@@ -139,7 +139,14 @@ App.view.define('VPrincipal',{
 				{
 					xtype: 'textfield',
 					width: 200,
-					//triggerCls : Ext.baseCSSPrefix + 'form-search-trigger',
+					triggers: {
+                    	search: {
+                        	cls: 'x-fa fa-search',
+                        	handler: function() {
+                            	alert('add trigger clicked');
+                        	}
+                    	}
+                	},
 					itemId: 'searchbox',
 					padding:4,
 					width: 150
