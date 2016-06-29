@@ -17,8 +17,7 @@ App.controller.define('CMain', {
 
 	views: [
 		"VMain",
-		"VPrincipal",
-		"VAgent"
+		"VPrincipal"
 	],
 	
 	models: [
@@ -102,7 +101,7 @@ App.controller.define('CMain', {
 	},
 	grid_ondblclick: function(p, record, item, index)
 	{
-		App.view.create('VAgent',{
+		App.view.create('VAgentPanel',{
 			agent: record.data
 		}).show();
 	},
