@@ -45,8 +45,24 @@ App.controller.define('CMain', {
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
-			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
-		};			
+			switch(p.itemId) {
+				case "MNU_AGENT_NEW":
+					this.NewAgent_onclick();
+					break;
+				case "MNU_EXPORT_CIV":
+					this.export_civ();
+					break;
+				case "MNU_RDV":
+					this.rendezVous();
+					break;
+				default:
+					break;
+			}
+		};				
+	},
+	rendezVous: function()
+	{
+		App.view.create('VRendezVous').show();
 	},
 	grid_onclick: function(p, record, item, index)
 	{
