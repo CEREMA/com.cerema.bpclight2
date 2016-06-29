@@ -223,7 +223,7 @@ App.view.define('agent.VVisit.formulaire', {
 								]
 							},
 							{
-								xtype: "boxselect",
+								xtype: "tagfield",
 								width: "100%",
 								fieldLabel: "Antécédents clinique",
 								itemId: "clinique",
@@ -264,7 +264,7 @@ App.view.define('agent.VVisit.formulaire', {
 
 							},
 							{
-								xtype: "boxselect",
+								xtype: "tagfield",
 								width: "100%",
 								fieldLabel: "Orientations",
 								itemId: "orientations",
