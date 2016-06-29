@@ -140,7 +140,7 @@ App.view.define('VPrincipal',{
 					xtype: 'textfield',
 					width: 200,
 					triggers: {
-                    	search: {
+                    	add: {
                         	cls: 'x-fa fa-search',
                         	handler: function() {
                             	alert('add trigger clicked');
