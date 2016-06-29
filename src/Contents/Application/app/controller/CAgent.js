@@ -14,7 +14,7 @@ function parseJsonDate(jsonDate) {
 App.controller.define('CAgent', {
 
 	views: [
-		"VAgent",
+		"VAgentPanel",
 		//"VShowFormation",
 		"agent.VSidePanel",
 		"agent.VAgent",
@@ -36,34 +36,34 @@ App.controller.define('CAgent', {
 				click: "Menu_onclick"
 			},
 			/*
-			TForm1
+			TAgentPanel
 			*/		
-			"TForm1": {
-				show: "TForm1_onshow"
+			"TAgentPanel": {
+				show: "TAgentPanel_onshow"
 			},
-			"TForm1 button#Record": {
+			"TAgentPanel button#Record": {
 				click: "record_onclick"
 			},
-			"TForm1 combo#TCat": {
+			"TAgentPanel combo#TCat": {
 				select: "TCat_onchange"
 			},
-			"TForm1 button#Exit": {
+			"TAgentPanel button#Exit": {
 				click: "close_agent"
 			},
-			"TForm1 textfield#TMelA": {
+			"TAgentPanel textfield#TMelA": {
 				render: "TMelA_onclick"
 			},
-			"TForm1 textfield#CodePostal": {
+			"TAgentPanel textfield#CodePostal": {
 				render: "TCodePostal_onclick",
 				keyup: "TCodePostal_onchange"
 			},
-			"TForm1 combo#VilleCBO": {
+			"TAgentPanel combo#VilleCBO": {
 				select: "VilleCBO_onclick"
 			},
-			"TForm1 button#RoleAdd": {
+			"TAgentPanel button#RoleAdd": {
 				click: "RoleAdd_click"
 			},
-			"TForm1 grid#roles": {
+			"TAgentPanel grid#roles": {
 				itemcontextmenu: "Roles_onContextMenu"
 			},
 			/*
@@ -319,7 +319,7 @@ App.controller.define('CAgent', {
 		if (App.get('TVisit htmleditor#data_medic_perso').getValue()!="")  gen_perso=App.get('TVisit htmleditor#data_medic_perso').getValue();
 		if (App.get('TVisit htmleditor#data_medic_family').getValue()!="") gen_family=App.get('TVisit htmleditor#data_medic_family').getValue();
 		var o={
-			kage: App.get('TForm1').agent.Kage,
+			kage: App.get('TAgentPanel').agent.Kage,
 			gen_perso: gen_perso,
 			gen_family: gen_family
 		};
@@ -329,14 +329,14 @@ App.controller.define('CAgent', {
 	},
 	Visit_onShow: function(p)
 	{
-		App.DB.get('bpclight://medic_gen?kage='+p.up('TForm1').agent.Kage,function(response) {
+		App.DB.get('bpclight://medic_gen?kage='+p.up('TAgentPanel').agent.Kage,function(response) {
 			if (response.data.length>0) App.get('TVisit htmleditor#data_medic_perso').setValue(response.data[0].gen_perso);
 			else App.get('TVisit htmleditor#data_medic_perso').setValue('');
 			if (response.data.length>0) App.get('TVisit htmleditor#data_medic_family').setValue(response.data[0].gen_family);
 			else App.get('TVisit htmleditor#data_medic_family').setValue('');
 			if (App.get('TVisit htmleditor#data_medic_family').getValue()=="") App.get('TVisit htmleditor#data_medic_family').setValue("<b>Père</b><hr><div><br></div><div><b>Mère</b><hr></div><div><b><br></b></div><div><b>Fratrie</b><hr></div>");
 		});
-		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
+		App.get('TVisit grid#grid_medic').getStore().getProxy().extraParams.kage=p.up('TAgentPanel').agent.Kage;
 		App.get('TVisit grid#grid_medic').getStore().load();
 	},
 	VisitDataOpen: function(p)
@@ -349,37 +349,37 @@ App.controller.define('CAgent', {
 	{
 		App.Agents.getMyPosition(record.data.Keta,function(err,response) {		
 			// on reset les panels
-			App.get(p.up('TForm1'),'panel#situation_header').hide();
-			App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
-			App.get(p.up('TForm1'),'grid#gridPositions').show();
-			App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
+			App.get(p.up('TAgentPanel'),'panel#situation_header').hide();
+			App.get(p.up('TAgentPanel'),'panel#situation_cancel_ok').hide();
+			App.get(p.up('TAgentPanel'),'grid#gridPositions').show();
+			App.get(p.up('TAgentPanel'),'panel#mutation_arrivee').hide();	
 			App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();			
-			App.get(p.up('TForm1'),'textarea#Motif').hide();	
-			App.get(p.up('TForm1'),'panel#TPanelI').hide();
+			App.get(p.up('TAgentPanel'),'textarea#Motif').hide();	
+			App.get(p.up('TAgentPanel'),'panel#TPanelI').hide();
 			App.get(p.up('TSituation'),'textfield#Motif').setValue('');
 			
-			App.get(p.up('TForm1'),'combo#position').setValue('');
-			App.get(p.up('TForm1'),'datefield#datEta').setValue('');
-			App.get(p.up('TForm1'),'textarea#Motif').setValue('');
-			App.get(p.up('TForm1'),'combo#MotifCBO').setValue('');
-			App.get(p.up('TForm1'),'combo#TIEtablissement').setValue('');
-			App.get(p.up('TForm1'),'combo#TIDepartement').setValue('');
-			App.get(p.up('TForm1'),'combo#TIService').setValue('');
-			App.get(p.up('TForm1'),'panel#TPanelI').hide();
-			App.get(p.up('TForm1'),'datefield#TDateCFA').setValue('');
-			App.get(p.up('TForm1'),'datefield#TDateCPA').setValue('');
-			App.get(p.up('TForm1'),'datefield#TDateRetraite').setValue('');		
+			App.get(p.up('TAgentPanel'),'combo#position').setValue('');
+			App.get(p.up('TAgentPanel'),'datefield#datEta').setValue('');
+			App.get(p.up('TAgentPanel'),'textarea#Motif').setValue('');
+			App.get(p.up('TAgentPanel'),'combo#MotifCBO').setValue('');
+			App.get(p.up('TAgentPanel'),'combo#TIEtablissement').setValue('');
+			App.get(p.up('TAgentPanel'),'combo#TIDepartement').setValue('');
+			App.get(p.up('TAgentPanel'),'combo#TIService').setValue('');
+			App.get(p.up('TAgentPanel'),'panel#TPanelI').hide();
+			App.get(p.up('TAgentPanel'),'datefield#TDateCFA').setValue('');
+			App.get(p.up('TAgentPanel'),'datefield#TDateCPA').setValue('');
+			App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').setValue('');		
 			
-			App.get(p.up('TForm1'),'combo#position').setReadOnly(true);
-			App.get(p.up('TForm1'),'datefield#datEta').setReadOnly(true);
-			App.get(p.up('TForm1'),'textarea#Motif').setReadOnly(true);
-			App.get(p.up('TForm1'),'combo#MotifCBO').setReadOnly(true);
-			App.get(p.up('TForm1'),'combo#TIEtablissement').setReadOnly(true);
-			App.get(p.up('TForm1'),'combo#TIDepartement').setReadOnly(true);
-			App.get(p.up('TForm1'),'combo#TIService').setReadOnly(true);
-			App.get(p.up('TForm1'),'datefield#TDateCFA').setReadOnly(true);
-			App.get(p.up('TForm1'),'datefield#TDateCPA').setReadOnly(true);
-			App.get(p.up('TForm1'),'datefield#TDateRetraite').setReadOnly(true);		
+			App.get(p.up('TAgentPanel'),'combo#position').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'datefield#datEta').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'textarea#Motif').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'combo#MotifCBO').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'combo#TIEtablissement').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'combo#TIDepartement').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'combo#TIService').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'datefield#TDateCFA').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'datefield#TDateCPA').setReadOnly(true);
+			App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').setReadOnly(true);		
 			
 			
 			console.log(response);
@@ -387,7 +387,7 @@ App.controller.define('CAgent', {
 			// Mutation arrivée		
 			if ((record[0].Kpst==1) || (record[0].Kpst==3)) {
 				App.get(p.up('TSituation'),'panel#mutation_arrivee').show();
-				App.get(p.up('TForm1'),'panel#TPanelI').show();
+				App.get(p.up('TAgentPanel'),'panel#TPanelI').show();
 				if (record[0].Kpst==1) {
 					App.get(p.up('TSituation'),'combo#MotifCBO').show();
 					App.get(p.up('TSituation'),'combo#MotifCBO').setValue(response.result.data[0].Arrivee*1);
@@ -450,7 +450,7 @@ App.controller.define('CAgent', {
 		App.readFile(file,function(result) {
 			App.get(cmp.up('TSidePanel'),'panel#PanelPhoto').update('<div class=IPhoto><img src="'+result+'" width=100 height=120></img></div>');
 			var o={
-				kage: cmp.up('TForm1').agent.Kage,
+				kage: cmp.up('TAgentPanel').agent.Kage,
 				trombi: result
 			};
 			App.Agents.setPhoto(o,function() {
@@ -461,16 +461,16 @@ App.controller.define('CAgent', {
 	ajouter_onclick: function(p)
 	{
 		var o = {
-			Kage: p.up('TForm1').agent.Kage,
-			type_formation: App.get(p.up('TForm1'),'TFormation combo#cbo1').getValue(),
-			Date: App.get(p.up('TForm1'),'TFormation datefield#date').getValue(),
-			upload: App.get(p.up('TForm1'),'TFormation textarea#Formation_document').getValue()
+			Kage: p.up('TAgentPanel').agent.Kage,
+			type_formation: App.get(p.up('TAgentPanel'),'TFormation combo#cbo1').getValue(),
+			Date: App.get(p.up('TAgentPanel'),'TFormation datefield#date').getValue(),
+			upload: App.get(p.up('TAgentPanel'),'TFormation textarea#Formation_document').getValue()
 		};
 		console.log(o);
-		if (App.get(p.up('TForm1'),'TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
+		if (App.get(p.up('TAgentPanel'),'TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
 		else o.Session='Recyclage';
 		App.Agents.saveFormation(o,function() {
-			App.get(p.up('TForm1'),'grid#gridFormation').getStore().load();
+			App.get(p.up('TAgentPanel'),'grid#gridFormation').getStore().load();
 		});
 	},
 	Formation_onContextMenu: function(view,rec,node,index,e) {
@@ -495,86 +495,86 @@ App.controller.define('CAgent', {
 	},
 	TFormation_onShow: function(p)
 	{
-		App.get(p.up('TForm1'),'grid#gridFormation').getStore().getProxy().extraParams.Kage=p.up('TForm1').agent.Kage;
-		App.get(p.up('TForm1'),'grid#gridFormation').getStore().load();
+		App.get(p.up('TAgentPanel'),'grid#gridFormation').getStore().getProxy().extraParams.Kage=p.up('TAgentPanel').agent.Kage;
+		App.get(p.up('TAgentPanel'),'grid#gridFormation').getStore().load();
 	},
 	situation_record: function(p)
 	{
 		
 		var o={
-			Kpst: App.get(p.up('TForm1'),'textfield#Situation_Kpst').getValue(),
-			DatEta: App.get(p.up('TForm1'),'datefield#datEta').getValue(),
-			Kage: p.up('TForm1').agent.Kage
+			Kpst: App.get(p.up('TAgentPanel'),'textfield#Situation_Kpst').getValue(),
+			DatEta: App.get(p.up('TAgentPanel'),'datefield#datEta').getValue(),
+			Kage: p.up('TAgentPanel').agent.Kage
 		};
 		
 		if ((o.Kpst==1) || (o.Kpst==3)) {
 			if (o.Kpst==1) 
-			o.Arrivee=App.get(p.up('TForm1'),'combo#MotifCBO').getValue();
+			o.Arrivee=App.get(p.up('TAgentPanel'),'combo#MotifCBO').getValue();
 			else
-			o.Arrivee=App.get(p.up('TForm1'),'textarea#Motif').getValue();
+			o.Arrivee=App.get(p.up('TAgentPanel'),'textarea#Motif').getValue();
 			
-			o.Ketsnew=App.get(p.up('TForm1'),'combo#TIEtablissement').getValue();
-			o.Kuninew=App.get(p.up('TForm1'),'combo#TIDepartement').getValue();
-			o.Ksubnew=App.get(p.up('TForm1'),'combo#TIService').getValue();
+			o.Ketsnew=App.get(p.up('TAgentPanel'),'combo#TIEtablissement').getValue();
+			o.Kuninew=App.get(p.up('TAgentPanel'),'combo#TIDepartement').getValue();
+			o.Ksubnew=App.get(p.up('TAgentPanel'),'combo#TIService').getValue();
 			
-			o.Ketsex=App.get(p.up('TForm1'),'combo#TEtablissement').getValue();
-			o.Kuniex=App.get(p.up('TForm1'),'combo#TDepartement').getValue();
-			o.Ksubex=App.get(p.up('TForm1'),'combo#TDepartement').getValue();
+			o.Ketsex=App.get(p.up('TAgentPanel'),'combo#TEtablissement').getValue();
+			o.Kuniex=App.get(p.up('TAgentPanel'),'combo#TDepartement').getValue();
+			o.Ksubex=App.get(p.up('TAgentPanel'),'combo#TDepartement').getValue();
 		};
 		
 		if (o.Kpst==14) {
-			o.DatCPA=App.get(p.up('TForm1'),'datefield#TDateCPA').getValue();
-			o.DatCFA=App.get(p.up('TForm1'),'datefield#TDateCFA').getValue();
-			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
+			o.DatCPA=App.get(p.up('TAgentPanel'),'datefield#TDateCPA').getValue();
+			o.DatCFA=App.get(p.up('TAgentPanel'),'datefield#TDateCFA').getValue();
+			o.DatRet=App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').getValue();
 		};
 		if (o.Kpst==8) {
-			o.DatCFA=App.get(p.up('TForm1'),'datefield#TDateCFA').getValue();
-			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
+			o.DatCFA=App.get(p.up('TAgentPanel'),'datefield#TDateCFA').getValue();
+			o.DatRet=App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').getValue();
 		};	
 		if (o.Kpst==7) {
-			o.DatCPA=App.get(p.up('TForm1'),'datefield#TDateCPA').getValue();
-			o.DatRet=App.get(p.up('TForm1'),'datefield#TDateRetraite').getValue();
+			o.DatCPA=App.get(p.up('TAgentPanel'),'datefield#TDateCPA').getValue();
+			o.DatRet=App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').getValue();
 		};		
-		o.Motif=App.get(p.up('TForm1'),'textarea#Motif').getValue();
+		o.Motif=App.get(p.up('TAgentPanel'),'textarea#Motif').getValue();
 		
 		App.Agents.saveSituation(o,function(err,response) {			
-			App.get(p.up('TForm1'),'panel#situation_header').hide();
-			App.get(p.up('TForm1'),'panel#situation_cancel_ok').hide();
-			App.get(p.up('TForm1'),'grid#gridPositions').show();
-			App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
+			App.get(p.up('TAgentPanel'),'panel#situation_header').hide();
+			App.get(p.up('TAgentPanel'),'panel#situation_cancel_ok').hide();
+			App.get(p.up('TAgentPanel'),'grid#gridPositions').show();
+			App.get(p.up('TAgentPanel'),'panel#mutation_arrivee').hide();	
 			App.get(p.up('TSituation'),'panel#CPACFARetraite').hide();			
-			App.get(p.up('TForm1'),'textarea#Motif').hide();			
-			App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
+			App.get(p.up('TAgentPanel'),'textarea#Motif').hide();			
+			App.get(p.up('TAgentPanel'),'grid#gridPositions').getStore().load();
 		});
 		
 	},
 	situation_add: function(p)
 	{
-		App.get(p.up('TForm1'),'combo#position').setReadOnly(false);
-		App.get(p.up('TForm1'),'datefield#datEta').setReadOnly(false);
-		App.get(p.up('TForm1'),'textarea#Motif').setReadOnly(false);
-		App.get(p.up('TForm1'),'combo#MotifCBO').setReadOnly(false);
-		App.get(p.up('TForm1'),'combo#TIEtablissement').setReadOnly(false);
-		App.get(p.up('TForm1'),'combo#TIDepartement').setReadOnly(false);
-		App.get(p.up('TForm1'),'combo#TIService').setReadOnly(false);
-		App.get(p.up('TForm1'),'datefield#TDateCFA').setReadOnly(false);
-		App.get(p.up('TForm1'),'datefield#TDateCPA').setReadOnly(false);
-		App.get(p.up('TForm1'),'datefield#TDateRetraite').setReadOnly(false);		
-		App.get(p.up('TForm1'),'panel#mutation_arrivee').hide();	
-		App.get(p.up('TForm1'),'combo#position').setValue('');
-		App.get(p.up('TForm1'),'datefield#datEta').setValue('');
-		App.get(p.up('TForm1'),'panel#situation_header').show();
-		App.get(p.up('TForm1'),'textarea#Motif').setValue('');
-		App.get(p.up('TForm1'),'combo#MotifCBO').setValue('');
-		App.get(p.up('TForm1'),'combo#TIEtablissement').setValue('');
-		App.get(p.up('TForm1'),'combo#TIDepartement').setValue('');
-		App.get(p.up('TForm1'),'combo#TIService').setValue('');
-		App.get(p.up('TForm1'),'panel#TPanelI').hide();
-		App.get(p.up('TForm1'),'datefield#TDateCFA').setValue('');
-		App.get(p.up('TForm1'),'datefield#TDateCPA').setValue('');
-		App.get(p.up('TForm1'),'datefield#TDateRetraite').setValue('');		
-		App.get(p.up('TForm1'),'grid#gridPositions').hide();		
-		App.get(p.up('TForm1'),'textarea#Motif').hide();
+		App.get(p.up('TAgentPanel'),'combo#position').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'datefield#datEta').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'textarea#Motif').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'combo#MotifCBO').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'combo#TIEtablissement').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'combo#TIDepartement').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'combo#TIService').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'datefield#TDateCFA').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'datefield#TDateCPA').setReadOnly(false);
+		App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').setReadOnly(false);		
+		App.get(p.up('TAgentPanel'),'panel#mutation_arrivee').hide();	
+		App.get(p.up('TAgentPanel'),'combo#position').setValue('');
+		App.get(p.up('TAgentPanel'),'datefield#datEta').setValue('');
+		App.get(p.up('TAgentPanel'),'panel#situation_header').show();
+		App.get(p.up('TAgentPanel'),'textarea#Motif').setValue('');
+		App.get(p.up('TAgentPanel'),'combo#MotifCBO').setValue('');
+		App.get(p.up('TAgentPanel'),'combo#TIEtablissement').setValue('');
+		App.get(p.up('TAgentPanel'),'combo#TIDepartement').setValue('');
+		App.get(p.up('TAgentPanel'),'combo#TIService').setValue('');
+		App.get(p.up('TAgentPanel'),'panel#TPanelI').hide();
+		App.get(p.up('TAgentPanel'),'datefield#TDateCFA').setValue('');
+		App.get(p.up('TAgentPanel'),'datefield#TDateCPA').setValue('');
+		App.get(p.up('TAgentPanel'),'datefield#TDateRetraite').setValue('');		
+		App.get(p.up('TAgentPanel'),'grid#gridPositions').hide();		
+		App.get(p.up('TAgentPanel'),'textarea#Motif').hide();
 	},
 	situation_cancel_onclick: function(p)
 	{
@@ -624,25 +624,25 @@ App.controller.define('CAgent', {
 	VilleCBO_onclick: function(p,record)
 	{
 		p.hide();
-		App.get(p.up('TForm1'),'textfield#CodePostal').setValue(p.getValue());
-		App.get(p.up('TForm1'),'textfield#Ville').show();
-		App.get(p.up('TForm1'),'textfield#Ville').setValue(p.getRawValue().split(' (')[0]);
-		App.get(p.up('TForm1'),'textfield#AdrCode').setValue(record[0].data.Id);
+		App.get(p.up('TAgentPanel'),'textfield#CodePostal').setValue(p.getValue());
+		App.get(p.up('TAgentPanel'),'textfield#Ville').show();
+		App.get(p.up('TAgentPanel'),'textfield#Ville').setValue(p.getRawValue().split(' (')[0]);
+		App.get(p.up('TAgentPanel'),'textfield#AdrCode').setValue(record[0].data.Id);
 	},
 	TCodePostal_onchange: function(p)
 	{
-		App.get(p.up('TForm1'),'combo#VilleCBO').getStore().getProxy().extraParams.Code=p.getValue();
-		App.get(p.up('TForm1'),'combo#VilleCBO').getStore().load();
-		App.get(p.up('TForm1'),'combo#VilleCBO').getStore().on('load',function(s) {
+		App.get(p.up('TAgentPanel'),'combo#VilleCBO').getStore().getProxy().extraParams.Code=p.getValue();
+		App.get(p.up('TAgentPanel'),'combo#VilleCBO').getStore().load();
+		App.get(p.up('TAgentPanel'),'combo#VilleCBO').getStore().on('load',function(s) {
 			if (s.data.items.length==1) {
-				App.get(p.up('TForm1'),'combo#VilleCBO').hide();
-				App.get(p.up('TForm1'),'textfield#AdrCode').setValue(s.data.items[0].data.Id);
-				App.get(p.up('TForm1'),'textfield#Ville').setValue(s.data.items[0].data.Ville.split(' (')[0]);
-				App.get(p.up('TForm1'),'textfield#CodePostal').setValue(s.data.items[0].data.Ville.split(' (')[1].split(')')[0]);
-				App.get(p.up('TForm1'),'textfield#Ville').show();
+				App.get(p.up('TAgentPanel'),'combo#VilleCBO').hide();
+				App.get(p.up('TAgentPanel'),'textfield#AdrCode').setValue(s.data.items[0].data.Id);
+				App.get(p.up('TAgentPanel'),'textfield#Ville').setValue(s.data.items[0].data.Ville.split(' (')[0]);
+				App.get(p.up('TAgentPanel'),'textfield#CodePostal').setValue(s.data.items[0].data.Ville.split(' (')[1].split(')')[0]);
+				App.get(p.up('TAgentPanel'),'textfield#Ville').show();
 			} else {
-				App.get(p.up('TForm1'),'combo#VilleCBO').show();
-				App.get(p.up('TForm1'),'textfield#Ville').hide();
+				App.get(p.up('TAgentPanel'),'combo#VilleCBO').show();
+				App.get(p.up('TAgentPanel'),'textfield#Ville').hide();
 			};
 		});
 	},
@@ -651,8 +651,8 @@ App.controller.define('CAgent', {
 		cmp.getEl().on('click', function() {	
 			if (cmp.getValue()=="") {
 				var suffix="@cerema.fr";
-				var nom=cmp.up('TForm1').agent.Nom.latinize().toLowerCase();
-				var prenom=cmp.up('TForm1').agent.Prenom.latinize().toLowerCase();
+				var nom=cmp.up('TAgentPanel').agent.Nom.latinize().toLowerCase();
+				var prenom=cmp.up('TAgentPanel').agent.Prenom.latinize().toLowerCase();
 				cmp.setValue(prenom+'.'+nom+suffix);
 			}
 		});
@@ -661,52 +661,52 @@ App.controller.define('CAgent', {
 	{
 		cmp.getEl().on('click', function() {	
 			cmp.setValue('');
-			App.get(cmp.up('TForm1'),'textfield#Ville').hide(true);
-			App.get(cmp.up('TForm1'),'combo#VilleCBO').show();
+			App.get(cmp.up('TAgentPanel'),'textfield#Ville').hide(true);
+			App.get(cmp.up('TAgentPanel'),'combo#VilleCBO').show();
 		});
 	},
 	record_onclick: function(p)
 	{
 		var o={
-			Kage: p.up('TForm1').agent.Kage,
-			INSEE: App.get(p.up('TForm1'),'textfield#TInsee').getValue()+' '+App.get(p.up('TForm1'),'textfield#TInseeKey').getValue(),
-			REHUCIT: App.get(p.up('TForm1'),'textfield#TRehucit').getValue(),
-			Nom: App.get(p.up('TForm1'),'textfield#LAgentNom').getValue(),
-			Prenom: App.get(p.up('TForm1'),'textfield#LAgentPrenom').getValue(),
-			Matri: App.get(p.up('TForm1'),'textfield#LAgentMatri').getValue(),
-			Kuni: App.get(p.up('TForm1'),'combo#TDepartement').getValue(),
-			Ksub: App.get(p.up('TForm1'),'combo#TService').getValue(),
-			libelle_poste: App.get(p.up('TForm1'),'htmleditor#metier').getValue(),
-			Telephone: App.get(p.up('TForm1'),'textfield#Phone').getValue(),
-			Portable: App.get(p.up('TForm1'),'textfield#Cell').getValue(),
-			DatNai: App.get(p.up('TForm1'),'datefield#DatNai').getValue(),
-			DepNai: App.get(p.up('TForm1'),'textfield#DeptNai').getValue(),
-			VilNai: App.get(p.up('TForm1'),'textfield#VilleNai').getValue(),
-			PaysNai: App.get(p.up('TForm1'),'textfield#PaysNai').getValue(),
-			Kgra: App.get(p.up('TForm1'),'combo#TGrade').getValue(),
-			Kbat: App.get(p.up('TForm1'),'combo#batiment').getValue(),
-			Ksec: App.get(p.up('TForm1'),'combo#Sec1').getValue(),
-			Ksec2: App.get(p.up('TForm1'),'combo#Sec2').getValue()
+			Kage: p.up('TAgentPanel').agent.Kage,
+			INSEE: App.get(p.up('TAgentPanel'),'textfield#TInsee').getValue()+' '+App.get(p.up('TAgentPanel'),'textfield#TInseeKey').getValue(),
+			REHUCIT: App.get(p.up('TAgentPanel'),'textfield#TRehucit').getValue(),
+			Nom: App.get(p.up('TAgentPanel'),'textfield#LAgentNom').getValue(),
+			Prenom: App.get(p.up('TAgentPanel'),'textfield#LAgentPrenom').getValue(),
+			Matri: App.get(p.up('TAgentPanel'),'textfield#LAgentMatri').getValue(),
+			Kuni: App.get(p.up('TAgentPanel'),'combo#TDepartement').getValue(),
+			Ksub: App.get(p.up('TAgentPanel'),'combo#TService').getValue(),
+			libelle_poste: App.get(p.up('TAgentPanel'),'htmleditor#metier').getValue(),
+			Telephone: App.get(p.up('TAgentPanel'),'textfield#Phone').getValue(),
+			Portable: App.get(p.up('TAgentPanel'),'textfield#Cell').getValue(),
+			DatNai: App.get(p.up('TAgentPanel'),'datefield#DatNai').getValue(),
+			DepNai: App.get(p.up('TAgentPanel'),'textfield#DeptNai').getValue(),
+			VilNai: App.get(p.up('TAgentPanel'),'textfield#VilleNai').getValue(),
+			PaysNai: App.get(p.up('TAgentPanel'),'textfield#PaysNai').getValue(),
+			Kgra: App.get(p.up('TAgentPanel'),'combo#TGrade').getValue(),
+			Kbat: App.get(p.up('TAgentPanel'),'combo#batiment').getValue(),
+			Ksec: App.get(p.up('TAgentPanel'),'combo#Sec1').getValue(),
+			Ksec2: App.get(p.up('TAgentPanel'),'combo#Sec2').getValue()
 		};
 		App.DB.post("bpclight://agents",o,function(err,response) {
 			var o={
-				Kage: p.up('TForm1').agent.Kage,
-				Kadr: App.get(p.up('TForm1'),'textfield#AdrK').getValue(),
-				Kpos: App.get(p.up('TForm1'),'textfield#AdrCode').getValue(),
-				Adresse: App.get(p.up('TForm1'),'textarea#Adresse').getValue()
+				Kage: p.up('TAgentPanel').agent.Kage,
+				Kadr: App.get(p.up('TAgentPanel'),'textfield#AdrK').getValue(),
+				Kpos: App.get(p.up('TAgentPanel'),'textfield#AdrCode').getValue(),
+				Adresse: App.get(p.up('TAgentPanel'),'textarea#Adresse').getValue()
 			};
 			App.Agents.setAdresse(o,function(err,response) {
 				App.get('TPrincipal grid#GridAgents').getStore().load();
-				App.DB.get('bpclight://mela{kmela}?kage='+p.up('TForm1').agent.Kage,function(r) {
+				App.DB.get('bpclight://mela{kmela}?kage='+p.up('TAgentPanel').agent.Kage,function(r) {
                     if (r.length>0) {
                         var obj=[{
                             Kmela: r.data[0].kmela,
-                            LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
+                            LibMelA: App.get(p.up('TAgentPanel'),'textfield#TMelA').getValue()
                         }];
                     } else {
                         var obj=[{
-                            Kage: p.up('TForm1').agent.Kage,
-                            LibMelA: App.get(p.up('TForm1'),'textfield#TMelA').getValue()
+                            Kage: p.up('TAgentPanel').agent.Kage,
+                            LibMelA: App.get(p.up('TAgentPanel'),'textfield#TMelA').getValue()
                         }];                        
                     };
 					App.DB.post('bpclight://mela',obj, function(err,response) {
@@ -768,43 +768,43 @@ App.controller.define('CAgent', {
 	{
 		p.setDisabled(true);
 		var o={
-			Kage: p.up('TForm1').agent.Kage,
-			Krol: App.get(p.up('TForm1'),'combo#cboRoles').getValue()
+			Kage: p.up('TAgentPanel').agent.Kage,
+			Krol: App.get(p.up('TAgentPanel'),'combo#cboRoles').getValue()
 		};
 		// exists already ?
 		var tb=[];
-		for (var i=0;i<App.get(p.up('TForm1'),'grid#roles').getStore().data.items.length;i++)
+		for (var i=0;i<App.get(p.up('TAgentPanel'),'grid#roles').getStore().data.items.length;i++)
 		{
-			tb.push(App.get(p.up('TForm1'),'grid#roles').getStore().data.items[i].data.CodRol);
+			tb.push(App.get(p.up('TAgentPanel'),'grid#roles').getStore().data.items[i].data.CodRol);
 		};
 		if (tb.indexOf(o.krol)>-1) {
 			Ext.MessageBox.alert('BPCLight', 'Ce rôle est déjà renseigné.');
 			p.setDisabled(false);
 		} else {		
 			App.Agents.addRole(o,function(response) {
-				App.get(p.up('TForm1'),'grid#roles').getStore().load();
+				App.get(p.up('TAgentPanel'),'grid#roles').getStore().load();
 				p.setDisabled(false);				
 			});			
 		}
 	},
 	TSituation_onshow: function(p)
 	{
-		App.get(p.up('TForm1'),'grid#gridPositions').getStore().getProxy().extraParams.kage=p.up('TForm1').agent.Kage;
-		App.get(p.up('TForm1'),'grid#gridPositions').getStore().load();
-		App.Agents.getPosition(p.up('TForm1').agent.Kage,function(response) {
+		App.get(p.up('TAgentPanel'),'grid#gridPositions').getStore().getProxy().extraParams.kage=p.up('TAgentPanel').agent.Kage;
+		App.get(p.up('TAgentPanel'),'grid#gridPositions').getStore().load();
+		App.Agents.getPosition(p.up('TAgentPanel').agent.Kage,function(response) {
 			if (response.length==0) 
-			App.get(p.up('TForm1'),'panel#maposition').update('<div style="padding:4px"><b>---</b></div>');
+			App.get(p.up('TAgentPanel'),'panel#maposition').update('<div style="padding:4px"><b>---</b></div>');
 			else
-			App.get(p.up('TForm1'),'panel#maposition').update('<div style="padding:4px"><b>'+response[0].Position+'</b></div>');
+			App.get(p.up('TAgentPanel'),'panel#maposition').update('<div style="padding:4px"><b>'+response[0].Position+'</b></div>');
 		});
 	},
 	close_agent: function(p)
 	{
 		p.up('window').close();
 	},
-	TForm1_onshow: function(p)
+	TAgentPanel_onshow: function(p)
 	{	
-		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TForm1 tabpanel#tabs').getTabBar().items.get(3).show(); else App.get('TForm1 tabpanel#tabs').getTabBar().items.get(3).hide();
+		if (Auth.User.profiles.indexOf('MEDECIN')>-1) App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).show(); else App.get('TAgentPanel tabpanel#tabs').getTabBar().items.get(3).hide();
 		var _p=this;
 		if (p.agent==-1) {
 			p.INSERT=true;
