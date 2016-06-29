@@ -140,7 +140,7 @@ App.view.define('VPrincipal',{
 					xtype: 'textfield',
 					width: 200,
 					triggers: {
-                    	add: {
+                    	searcb: {
                         	handler: function() {
                             	alert('add trigger clicked');
                         	}
