@@ -40,10 +40,8 @@ App.view.define('VRendezVous', {
 				style         : 'border: 1px solid #d0d0d0;',
 
 				showTodayLine : true,
-				viewPreset   : 'hourAndDay',
-
     			calendarColumnClass : 'App.column.Day',
-				//calendarViewPreset   : 'day',
+				calendarViewPreset   : 'week',
 				mode                 : 'calendar',
 				eventResizeHandles   : 'end',
 				eventBodyTemplate    : '{Name}',
