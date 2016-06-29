@@ -1,6 +1,6 @@
-App.view.define('VForm1', {
+App.view.define('VAgent', {
     extend: "Ext.window.Window",
-    alias: 'widget.TForm1',
+    alias: 'widget.TAgent',
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
