@@ -36,6 +36,9 @@ App.controller.define('CMain', {
 			"mainform grid#GridAgents": {
 				itemdblclick: "grid_ondblclick",
 				itemclick: "grid_onclick"
+			},
+			"mainform button#BtnFilter" : {
+				click: "filter_onclick"
 			}
 		});
 		
@@ -59,6 +62,14 @@ App.controller.define('CMain', {
 					break;
 			}
 		};				
+	},
+	filter_onclick: function()
+	{
+		App.get('FilterBox#FilterPanel').store=App.get('grid#GridAgents').getStore();
+		if (App.get('FilterBox#FilterPanel').isVisible())
+		App.get('FilterBox#FilterPanel').hide();
+		else
+		App.get('FilterBox#FilterPanel').show();
 	},
 	rendezVous: function()
 	{
