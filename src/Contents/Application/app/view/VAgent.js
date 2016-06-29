@@ -1,6 +1,6 @@
-App.view.define('VAgent', {
+App.view.define('VAgentPanel', {
     extend: "Ext.window.Window",
-    alias: 'widget.TAgent',
+    alias: 'widget.TAgentPanel',
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
