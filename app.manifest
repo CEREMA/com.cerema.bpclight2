@@ -54,7 +54,8 @@
         "CAgent"
     ],
     "modules": [
-        "Ext.ux.FilterBox"
+        "Ext.ux.FilterBox",
+        "Ext.ux.plugin.FileDrop"
     ],
     "plugins": [],
     "api": [
