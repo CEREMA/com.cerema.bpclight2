@@ -242,8 +242,8 @@ App.controller.define('CAgent', {
 			_clinique: App.get('TVisitData htmleditor#clinique').getValue(),
 			poste_actuel: App.get('TVisitData htmleditor#TPosteActuel').getValue(),
 			traitements: App.get('TVisitData htmleditor#TTraitements').getValue(),
-			orientations: App.get('TVisitData boxselect#orientations').getValue(),
-			clinique: App.get('TVisitData boxselect#clinique').getValue(),
+			orientations: App.get('TVisitData tagfield#orientations').getValue(),
+			clinique: App.get('TVisitData tagfield#clinique').getValue(),
 			vaccinations: App.get('TVisitData htmleditor#vaccinations').getValue(),
 			conclusions: App.get('TVisitData combo#TConclusions').getValue()
 		};
@@ -291,8 +291,8 @@ App.controller.define('CAgent', {
 				App.get('TVisitData htmleditor#clinique').setValue(o._clinique);
 				App.get('TVisitData htmleditor#TPosteActuel').setValue(o.poste_actuel);
 				App.get('TVisitData htmleditor#TTraitements').setValue(o.traitements);
-				App.get('TVisitData boxselect#orientations').setValue(JSON.parse(o.orientations));
-				App.get('TVisitData boxselect#clinique').setValue(JSON.parse(o.clinique));
+				App.get('TVisitData tagfield#orientations').setValue(JSON.parse(o.orientations));
+				App.get('TVisitData tagfield#clinique').setValue(JSON.parse(o.clinique));
 				App.get('TVisitData combo#TConclusions').setValue(o.conclusions);
 				App.get('TVisitData combo#TTabac').setValue(o.tabac);
 				App.get('TVisitData combo#TAlcool').setValue(o.alcool);
