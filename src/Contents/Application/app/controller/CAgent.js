@@ -257,7 +257,7 @@ App.controller.define('CAgent', {
 	},
 	visitdata_onshow: function(p)
 	{
-		return;
+		
 		if (p._id) {
 			App.DB.get('bpclight://medic_dossiers?id='+p._id,function(o) {
 				o=o.data[0];
