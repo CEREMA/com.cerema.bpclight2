@@ -27,7 +27,7 @@ App.view.define('VMain', {
 				},
 				{
 					text: "Visites médicales",
-					hidden: true,
+					hidden: false,
 					id: "MNU_VM",
 					menu: [
 						{
