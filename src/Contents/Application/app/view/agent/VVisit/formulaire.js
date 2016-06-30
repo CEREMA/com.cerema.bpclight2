@@ -454,7 +454,7 @@ App.view.define('agent.VVisit.formulaire', {
 									border: false,
 									height: 150,
 									width: "100%",
-									customEditors: {
+									sourceConfig: {
 										Anomalie: {
 											xtype: 'combo',
 											store: {
