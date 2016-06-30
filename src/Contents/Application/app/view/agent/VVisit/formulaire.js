@@ -420,7 +420,7 @@ App.view.define('agent.VVisit.formulaire', {
 									xtype: "propertygrid",
 									itemId: "TU",
 									border: false,
-									customEditors: {
+									sourceConfig: {
 										Resultat: {
 											xtype: 'combo',
 											store: {
@@ -533,7 +533,7 @@ App.view.define('agent.VVisit.formulaire', {
 									border: false,
 									height: 140,
 									width: "100%",
-									customEditors: {
+									sourceConfig: {
 										"Correction": {
 											xtype: 'combo',
 											store: {
