@@ -17,7 +17,8 @@ App.controller.define('CMain', {
 
 	views: [
 		"VMain",
-		"VPrincipal"
+		"VPrincipal",
+        "VRendezVous"
 	],
 	
 	models: [
