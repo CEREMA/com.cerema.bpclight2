@@ -6,6 +6,7 @@ App.view.define('agent.VFormation', {
         this.layout = "vbox";
         this.border = false;
         this.bodyStyle="background-color:red";
+        this.height="100%";
         this.items = [
             {
                 layout: "hbox",
