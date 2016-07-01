@@ -102,7 +102,8 @@ App.view.define('agent.VFormation', {
 						readType: "DataURL"
 					}]
                 } ]
-            }, {
+            }, 
+            {
                 layout: "hbox",
                 border: false,
                 width: "100%",
@@ -150,6 +151,7 @@ App.view.define('agent.VFormation', {
                 }],
                 width: "100%",
                 flex: 1,
+                height: 250,
                 store: App.store.create('App.Agents.getFormations')
 
             }
