@@ -5,6 +5,7 @@ App.view.define('agent.VFormation', {
         this.title = "Formation";
         this.layout = "vbox";
         this.border = false;
+        this.bodyStyle="background-color:red";
         this.items = [
             {
                 layout: "hbox",
@@ -67,7 +68,8 @@ App.view.define('agent.VFormation', {
                     },
                     width: 200,
                     fieldLabel: 'Date'
-                }, {
+            }, 
+            {
                 layout: "hbox",
                 border: false,
                 width: "100%",
@@ -98,7 +100,7 @@ App.view.define('agent.VFormation', {
 						ptype: "filedrop",
 						readType: "DataURL"
 					}]
-                }, ]
+                } ]
             }, {
                 layout: "hbox",
                 border: false,
