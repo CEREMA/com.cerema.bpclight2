@@ -150,7 +150,7 @@ App.view.define('agent.VFormation', {
                 }],
                 width: "100%",
                 flex: 1,
-                height: 350,
+                height: 300,
                 store: App.store.create('App.Agents.getFormations')
 
             }
