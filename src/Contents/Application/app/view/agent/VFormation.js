@@ -116,11 +116,43 @@ App.view.define('agent.VFormation', {
                     text: "Ajouter"
                 }
                 ]
-            }, {
+            }, 
+            {
 
-                html: "kfsdfjklsdfj",
-                flex: 1
+                xtype: "grid",
+                itemId: "gridFormation",
+                margin: {
+                    top: 10,
+                    bottom: 0,
+                    left: 0,
+                    right: 0
+                },
+                columns: [{
+                    text: "Formations",
+                    width: 250,
+                    dataIndex: "Libelle"
+                }, {
+                    text: "Date",
+                    type: "date",
+                    renderer: Ext.util.Format.dateRenderer('d/m/Y'),
+                    dataIndex: "Date"
+                }, {
+                    text: "Session I/R",
+                    dataIndex: "Session"
+                }, {
+                    text: "Fréquence",
+                    dataIndex: "frequence",
+                    renderer: function(r) {
+                        if (r==-1) return "-"; else 
+                        if (r==1) return r+' an'; else 
+                        if (r>1) return r+' ans';
                     }
+                }],
+                width: "100%",
+                flex: 1,
+                store: App.store.create('App.Agents.getFormations')
+
+            }
 
 
         ];
