@@ -44,9 +44,11 @@ App.view.define('VAgentPanel', {
                 border: false,
                 xtype: "tabpanel",
 				itemId: "tabs",
-                items: [{
+                items: [
+                {
                     xtype: "TAgent"
-                }, {
+                }, 
+                {
                     xtype: "TSituation"
                 },
 				{
