@@ -139,7 +139,8 @@ App.view.define('agent.VFormation', {
                 }, {
                     text: "Session I/R",
                     dataIndex: "Session"
-                }, {
+                }, 
+                {
                     text: "Fréquence",
                     dataIndex: "frequence",
                     renderer: function(r) {
@@ -150,7 +151,7 @@ App.view.define('agent.VFormation', {
                 }],
                 width: "100%",
                 flex: 1,
-                height: 300,
+                height: 310,
                 store: App.store.create('App.Agents.getFormations')
 
             }
