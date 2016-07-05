@@ -37,7 +37,7 @@ App.view.define('VCreateAgent', {
 				width: "100%",
 				padding: 5
 			},
-			{
+/*			{
 				xtype: "radiogroup",
 				itemId: "rdiona",
 				vertical: true,
