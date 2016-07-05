@@ -103,6 +103,7 @@ App.controller.define('CMain', {
 	},
 	NewAgent_onclick: function()
 	{
+        alert('x');
 		App.view.create('VCreateAgent',{
 			modal: true
 		}).show();	
