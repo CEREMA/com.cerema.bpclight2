@@ -57,9 +57,9 @@ App.controller.define('CMain', {
 			"createAgent button#Record": {
 				click: "TCADepartement_create"
 			},
-			"createAgent combo#TCACadGrad": {
+			/*"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
-			},
+			},*/
 			"createAgent grid#gridTPT": {
 				itemclick: "gridTPT_ondblclick",
 			},
