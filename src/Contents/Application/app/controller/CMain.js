@@ -121,7 +121,7 @@ App.controller.define('CMain', {
 	onSearch: function(v)
 	{
 		var grid=App.get('grid#GridAgents');
-		if (App.get('ux-searchbox#searchbox').getValue()!="") {
+		if (App.get('textfield#searchbox').getValue()!="") {
 			grid.getStore().getProxy().extraParams={
 				nom: App.get('ux-searchbox#searchbox').getValue()+"%"
 			};
