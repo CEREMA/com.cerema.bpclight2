@@ -42,7 +42,7 @@ App.controller.define('CMain', {
 			"mainform button#BtnFilter" : {
 				click: "filter_onclick"
 			},
-			"TPrincipal button#NewAgent" : {
+			"button#NewAgent" : {
 				click: "NewAgent_onclick"
 			},/*,
 			"mainform button#BtnExport" : {
