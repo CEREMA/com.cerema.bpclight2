@@ -3,7 +3,7 @@ App.view.define('VAgentPanel', {
     alias: 'widget.TAgentPanel',
     initComponent: function() {
         this.width = 1024;
-        this.height = 660;
+        this.height = 700;
         this.title = "...";
 
         this.layout = {
