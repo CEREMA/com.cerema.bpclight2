@@ -57,9 +57,9 @@ App.controller.define('CMain', {
 			"createAgent button#Record": {
 				click: "TCADepartement_create"
 			},
-			/*"createAgent combo#TCACadGrad": {
+			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
-			},*/
+			},
 			"createAgent grid#gridTPT": {
 				itemclick: "gridTPT_ondblclick",
 			},
@@ -267,7 +267,14 @@ App.controller.define('CMain', {
 		var cbo=App.get(p.up('window'),'combo#TCAService');
 		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
 		cbo.getStore().load();	
-	},    
+	},  
+	TCACat_onchange: function(p,record)
+	{
+		App.get(p.up('panel'),'combo#TCAGrade').setValue('');
+		var cbo=App.get(p.up('panel'),'combo#TCAGrade');
+		cbo.getStore().getProxy().extraParams.catgrad=record;
+		cbo.getStore().load();		
+	},	    
 	tpt_exit: function(p)
 	{
 		p.up('window').close();
