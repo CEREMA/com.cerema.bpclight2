@@ -470,7 +470,9 @@ App.controller.define('CAgent', {
 		console.log(o);
 		if (App.get(p.up('TAgentPanel'),'TFormation radiofield#radiofield1').getValue()===true) o.Session='Initiale';
 		else o.Session='Recyclage';
-		App.Agents.saveFormation(o,function() {
+        App.DB.post('bpclight://recapitulatif',o,function(e,r) {
+            console.log(e);
+            console.log(r);
 			App.get(p.up('TAgentPanel'),'grid#gridFormation').getStore().load();
 		});
 	},
