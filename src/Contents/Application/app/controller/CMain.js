@@ -42,6 +42,16 @@ App.controller.define('CMain', {
 			"mainform button#BtnFilter" : {
 				click: "filter_onclick"
 			},
+			"mainform button#NewAgent" : {
+				click: "NewAgent_onclick"
+			},/*,
+			"mainform button#BtnExport" : {
+				click: "btnExport_onclick"
+			},*/
+			"mainform ux-searchbox#searchbox" : {
+				click: "onSearch",
+				keyup: "onSearch"
+			},            
 			/*
 			createAgent
 			*/
