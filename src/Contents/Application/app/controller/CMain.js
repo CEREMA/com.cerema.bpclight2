@@ -118,6 +118,27 @@ App.controller.define('CMain', {
 			modal: true
 		}).show();	
 	},
+	onSearch: function(v)
+	{
+		var grid=App.get('grid#GridAgents');
+		if (App.get('ux-searchbox#searchbox').getValue()!="") {
+			grid.getStore().getProxy().extraParams={
+				nom: App.get('ux-searchbox#searchbox').getValue()+"%"
+			};
+		} else {
+			grid.getStore().getProxy().extraParams={
+				nom: "-1"
+			};		
+		};
+		grid.getStore().load();
+	},
+	CA_onSearch: function(v)
+	{		
+		App.Temptation.search(v,function(o) {
+			App.get('grid#gridTPT').show();
+			App.get('grid#gridTPT').getStore().loadData(o);
+		});
+	},    
     grid_onclick: function(p, record, item, index)
 	{
 		$('#TPhone').html(record.data.Telephone);
