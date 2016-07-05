@@ -123,7 +123,7 @@ App.controller.define('CMain', {
 		var grid=App.get('grid#GridAgents');
 		if (App.get('textfield#searchbox').getValue()!="") {
 			grid.getStore().getProxy().extraParams={
-				nom: App.get('ux-searchbox#searchbox').getValue()+"%"
+				nom: App.get('textfield#searchbox').getValue()+"%"
 			};
 		} else {
 			grid.getStore().getProxy().extraParams={
