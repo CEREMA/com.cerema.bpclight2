@@ -138,6 +138,7 @@ App.view.define('VPrincipal',{
 			tbar: [
 				{
 					xtype: 'textfield',
+                    enableKeyEvents:true,
 					width: 200,
 					triggers: {
                     	search: {
