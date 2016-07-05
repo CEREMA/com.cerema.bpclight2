@@ -15,6 +15,7 @@ App.view.define('VPrincipal',{
 			split:true,
 			tbar: [
 				{
+                    xtype: "button",
 					text: "Nouvel agent",
 					itemId: "NewAgent",
 					scale: 'small', 
