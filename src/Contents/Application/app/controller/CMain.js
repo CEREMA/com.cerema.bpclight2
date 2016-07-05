@@ -101,7 +101,13 @@ App.controller.define('CMain', {
 	{
 		App.view.create('VRendezVous').show();
 	},
-	grid_onclick: function(p, record, item, index)
+	NewAgent_onclick: function()
+	{
+		App.view.create('VCreateAgent',{
+			modal: true
+		}).show();	
+	},
+    grid_onclick: function(p, record, item, index)
 	{
 		$('#TPhone').html(record.data.Telephone);
 		if (record.data.Portable!="") $('#TMobile').html(record.data.Portable); else $('#TMobile').html('&nbsp;&nbsp;');
