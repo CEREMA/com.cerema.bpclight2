@@ -48,7 +48,7 @@ App.controller.define('CMain', {
 			"mainform button#BtnExport" : {
 				click: "btnExport_onclick"
 			},*/
-			"mainform ux-searchbox#searchbox" : {
+			"mainform textfield#searchbox" : {
 				click: "onSearch",
 				keyup: "onSearch"
 			},            
