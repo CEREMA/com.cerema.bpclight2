@@ -42,7 +42,7 @@ App.controller.define('CMain', {
 			"mainform button#BtnFilter" : {
 				click: "filter_onclick"
 			},
-			"mainform button#NewAgent" : {
+			"TPrincipal button#NewAgent" : {
 				click: "NewAgent_onclick"
 			},/*,
 			"mainform button#BtnExport" : {
@@ -113,7 +113,7 @@ App.controller.define('CMain', {
 	},
 	NewAgent_onclick: function()
 	{
-        alert('x');
+        alert('zzzzx');
 		/*App.view.create('VCreateAgent',{
 			modal: true
 		}).show();	*/
