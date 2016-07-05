@@ -261,6 +261,13 @@ App.controller.define('CMain', {
 		App.get('createAgent textfield#TCANom').setValue(nom);
 		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
 	},	
+	TCADepartement_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCAService');
+		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
+		cbo.getStore().load();	
+	},    
 	tpt_exit: function(p)
 	{
 		p.up('window').close();
