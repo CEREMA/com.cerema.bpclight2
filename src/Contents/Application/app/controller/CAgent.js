@@ -15,7 +15,7 @@ App.controller.define('CAgent', {
 
 	views: [
 		"VAgentPanel",
-		//"VShowFormation",
+		"VShowFormation",
 		"agent.VSidePanel",
 		"agent.VAgent",
 		"agent.VSituation",
@@ -913,6 +913,28 @@ App.controller.define('CAgent', {
 		var cbo=App.get(p.up('window'),'combo#TIService');
 		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
 		cbo.getStore().load();
-	}	
+	},
+	TCACat_onchange: function(p,record)
+	{
+		App.get(p.up('panel'),'combo#TCAGrade').setValue('');
+		var cbo=App.get(p.up('panel'),'combo#TCAGrade');
+		cbo.getStore().getProxy().extraParams.catgrad=record;
+		cbo.getStore().load();		
+	},	
+	TCAEtablissement_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCADepartement').setValue('');
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCADepartement');
+		cbo.getStore().getProxy().extraParams.kets=record[0].data.Kets;
+		cbo.getStore().load();	
+	},
+	TCADepartement_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCAService');
+		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
+		cbo.getStore().load();	
+	}
 	
 });

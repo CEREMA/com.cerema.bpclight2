@@ -18,7 +18,8 @@ App.controller.define('CMain', {
 	views: [
 		"VMain",
 		"VPrincipal",
-        "VRendezVous"
+        "VRendezVous",
+		"VCreateAgent"
 	],
 	
 	models: [
@@ -40,7 +41,31 @@ App.controller.define('CMain', {
 			},
 			"mainform button#BtnFilter" : {
 				click: "filter_onclick"
-			}
+			},
+			/*
+			createAgent
+			*/
+			"createAgent radiogroup#rdiona": {
+				change: "rdiona_change"
+			},	
+			"createAgent combo#TCAEtablissement": {
+				select: "TCAEtablissement_onchange"
+			},
+			"createAgent combo#TCADepartement": {
+				select: "TCADepartement_onchange"
+			},
+			"createAgent button#Record": {
+				click: "TCADepartement_create"
+			},
+			"createAgent combo#TCACadGrad": {
+				change: "TCACat_onchange"
+			},
+			"createAgent grid#gridTPT": {
+				itemclick: "gridTPT_ondblclick",
+			},
+			"createAgent button#Exit": {
+				click: "tpt_exit"
+			}			
 		});
 		
 		App.init('VMain',this.onLoad);
@@ -161,7 +186,83 @@ App.controller.define('CMain', {
 			if (x.profiles.indexOf('SRH')>-1) Ext.getCmp('MNU_VM').show();
 		});
 
-	}
-	
-	
+	},
+	/*
+	CreateAgent
+	*/
+	rdiona_change: function(radiogroup, radio)
+	{
+		if (radio.rb==3) {
+			App.get('panel#TCaGRA').show();
+			App.get('grid#gridTPT').show();			
+			this.CA_onSearch();
+		} else {
+			App.get('panel#TCaGRA').hide();
+			App.get('grid#gridTPT').hide();
+		}
+	},	
+	TCAEtablissement_onchange: function(p,record)
+	{
+		App.get(p.up('window'),'combo#TCADepartement').setValue('');
+		App.get(p.up('window'),'combo#TCAService').setValue('');
+		var cbo=App.get(p.up('window'),'combo#TCADepartement');
+		cbo.getStore().getProxy().extraParams.kets=record[0].data.Kets;
+		cbo.getStore().load();	
+	},
+	TCADepartement_create: function(_p) 
+	{
+		var err=[];
+		var o={
+			Kuni: App.get("combo#TCADepartement").getValue(),
+			Ksub: App.get("combo#TCAService").getValue(),
+			Nom: App.get("textfield#TCANom").getValue(),
+			Prenom: App.get("textfield#TCAPrenom").getValue(),
+			Actif: 1
+		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==1) {
+			o.Kgra=66;
+		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==2) {
+			o.Kgra=67;
+		};
+		if (App.get('createAgent radiogroup#rdiona').lastValue.rb==3) {
+			var t=App.get('createAgent grid#gridTPT').getSelectionModel().selected.items[0].data;
+			o.Matri=t.matri;
+			if (App.get('createAgent combo#TCAGrade').getValue() === null) err.push("<li>Le grade");
+			else
+			o.Kgra=App.get('createAgent combo#TCAGrade').getValue();
+		};		
+		if (o.Nom=="") err.push("<li>Nom");
+		if (o.Prenom=="") err.push("<li>Prénom");
+		if (!o.Kuni) err.push("<li>Le département");
+		if (!o.Ksub) err.push("<li>Le service");
+		if (err.length>0) {
+			Ext.MessageBox.show({
+			   title: 'BPCLight',
+			   msg: 'Vous avez oublié de renseigner les champs suivants : <br><ul>'+err.join('<br>')+'</ul>',
+			   buttons: Ext.MessageBox.OK
+			});
+		} else {
+			App.DB.post("bpclight://agents",o,function(r) {
+				App.Agents.getOne(r.insertId,function(e,m) {
+					App.view.create('VForm1',{
+						agent: m.result[0]
+					}).show();
+					_p.up('window').close();
+				});
+			});
+		}
+	},
+	gridTPT_ondblclick: function(p, record, item, index)
+	{		
+		var x=record.data.nompre.lastIndexOf(' ');
+		var prenom=record.data.nompre.substr(x+1,255);
+		var nom=record.data.nompre.substr(0,x);
+		App.get('createAgent textfield#TCANom').setValue(nom);
+		App.get('createAgent textfield#TCAPrenom').setValue(prenom);
+	},	
+	tpt_exit: function(p)
+	{
+		p.up('window').close();
+	}	
 });
