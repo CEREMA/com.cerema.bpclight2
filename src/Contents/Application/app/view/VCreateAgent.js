@@ -220,7 +220,7 @@ App.view.define('VCreateAgent', {
 			}*/
 		];
 		
-		//this.callParent();
+		this.callParent();
 		
 	}
 	
