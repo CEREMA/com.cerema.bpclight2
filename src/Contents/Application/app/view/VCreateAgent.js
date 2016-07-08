@@ -11,6 +11,15 @@ initComponent: function()
         this.height = 610;
         this.title = "Nouvel agent";
 		this.bodyStyle="background-color: white";
+        this.bbar = [
+            '->', {
+                text: 'Enregistrer',
+				itemId: "Record"
+            }, {
+                text: 'Quitter',
+				itemId: "Exit"
+            }
+        ];	
 		this.items = [
 			{
 				html: '<div style="font-weight: bold;padding:5px">1. Typologie du nouvel agent</div>',
