@@ -113,10 +113,10 @@ App.controller.define('CMain', {
 	},
 	NewAgent_onclick: function()
 	{
-        alert('zzzzx');
-		/*App.view.create('VCreateAgent',{
+        //alert('zzzzx');
+		App.view.create('VCreateAgent',{
 			modal: true
-		}).show();	*/
+		}).show();
 	},
 	onSearch: function(v)
 	{
