@@ -36,7 +36,7 @@ App.view.define('VCreateAgent', {
 				width: "100%",
 				padding: 5
 			},
-			/*{
+			{
 				xtype: "radiogroup",
 				itemId: "rdiona",
 				vertical: true,
@@ -53,7 +53,7 @@ App.view.define('VCreateAgent', {
 					{boxLabel: 'Titulaire', name: 'rb', inputValue: '3'}
 				]
 			},
-			{
+			/*{
 				xtype: "grid",
 				itemId: "gridTPT",
 				margin: {
