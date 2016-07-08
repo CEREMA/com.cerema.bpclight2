@@ -86,7 +86,7 @@ App.controller.define('CMain', {
 		if (p.itemId) {
 			switch(p.itemId) {
 				case "MNU_AGENT_NEW":
-					this.NewAgent_onclick();
+					//this.NewAgent_onclick();
 					break;
 				case "MNU_EXPORT_CIV":
 					this.export_civ();
