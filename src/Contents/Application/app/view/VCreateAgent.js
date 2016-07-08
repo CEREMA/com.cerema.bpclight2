@@ -8,7 +8,7 @@ App.view.define('VCreateAgent', {
         this.height = 610;
         this.title = "Nouvel agent";
 
-        this.layout = "vbox";
+        this.layout = "hbox";
 		
 		this.bodyStyle="background-color: white";
 
@@ -40,7 +40,6 @@ App.view.define('VCreateAgent', {
 				vertical: true,
 				columns: 1,
 				height: 80,
-				flex: 1,
 				padding: 0,
 				margin: {
 					left: 40
