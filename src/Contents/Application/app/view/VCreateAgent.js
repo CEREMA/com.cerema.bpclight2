@@ -27,7 +27,11 @@ App.view.define('VCreateAgent', {
         };	
 		
 		this.items = [
-
+			{
+				xtype: "combo",
+				width: "100%",
+				flex: 1
+			}
 		];
 		
 		this.callParent();
