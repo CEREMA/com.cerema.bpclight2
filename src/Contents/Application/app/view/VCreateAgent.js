@@ -27,9 +27,7 @@ App.view.define('VCreateAgent', {
         };	
 		
 		this.items = [
-			{
-				html: "yes"
-			}
+
 		];
 		
 		this.callParent();
