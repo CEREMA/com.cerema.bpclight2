@@ -54,7 +54,7 @@ App.view.define('VCreateAgent', {
 					{boxLabel: 'Titulaire', name: 'rb', inputValue: '3'}
 				]
 			},
-			{
+			/*{
 				xtype: "grid",
 				itemId: "gridTPT",
 				margin: {
@@ -220,7 +220,7 @@ App.view.define('VCreateAgent', {
 						width: 350
 					}				
 				]
-			}
+			}*/
 		];
 		
 		this.callParent();
