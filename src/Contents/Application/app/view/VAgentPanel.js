@@ -110,6 +110,6 @@ App.view.define('VAgentPanel', {
 		}
 		];
 
-        //this.callParent();
+        this.callParent();
     }
 });
