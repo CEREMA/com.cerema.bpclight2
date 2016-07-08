@@ -7,6 +7,9 @@ initComponent: function()
 		this.title="Situation";
 		this.layout="vbox";
 		this.border=false;
+		this.width = 430;
+        this.height = 610;
+        this.title = "Nouvel agent";
 		this.items = [
 			{
 				layout: "hbox",
@@ -263,6 +266,6 @@ initComponent: function()
 			}
 		];
 		this.callParent();
-	}
+	}	
 	
 });
