@@ -116,7 +116,7 @@ App.controller.define('CMain', {
         //alert('zzzzx');
 		App.view.create('VCreateAgent',{
 			modal: true
-		}).show();
+		}).show().center();
 	},
 	onSearch: function(v)
 	{
