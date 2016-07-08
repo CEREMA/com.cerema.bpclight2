@@ -84,7 +84,7 @@ App.view.define('VCreateAgent', {
 				width: 350,
 				height: 120
 			},
-			*/{
+			{
 				html: '<div style="font-weight: bold;margin-top:10px;padding:5px">2. Renseignements</div>',
 				border: false,
 				height: 40,
@@ -219,7 +219,7 @@ App.view.define('VCreateAgent', {
 						width: 350
 					}				
 				]
-			}
+			}*/
 		];
 		
 		this.callParent();
