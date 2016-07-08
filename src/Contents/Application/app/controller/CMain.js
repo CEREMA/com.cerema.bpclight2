@@ -55,7 +55,7 @@ App.controller.define('CMain', {
 			/*
 			createAgent
 			*/
-			"createAgent radiogroup#rdiona": {
+			/*"createAgent radiogroup#rdiona": {
 				change: "rdiona_change"
 			},	
 			"createAgent combo#TCAEtablissement": {
@@ -75,7 +75,7 @@ App.controller.define('CMain', {
 			},
 			"createAgent button#Exit": {
 				click: "tpt_exit"
-			}			
+			}	*/		
 		});
 		
 		App.init('VMain',this.onLoad);
