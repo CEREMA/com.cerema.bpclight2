@@ -114,7 +114,7 @@ App.controller.define('CMain', {
 	NewAgent_onclick: function()
 	{
 		App.view.create('VCreateAgent',{
-			modal: true
+			//modal: true
 		}).show().center();
 	},
 	onSearch: function(v)
