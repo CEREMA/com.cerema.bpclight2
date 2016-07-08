@@ -113,7 +113,6 @@ App.controller.define('CMain', {
 	},
 	NewAgent_onclick: function()
 	{
-        //alert('zzzzx');
 		App.view.create('VCreateAgent',{
 			modal: true
 		}).show().center();
