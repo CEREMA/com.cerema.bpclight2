@@ -9,7 +9,7 @@ App.view.define('VCreateAgent', {
         this.title = "Nouvel agent";
 
         this.layout = {
-            type: 'vbox'
+            type: 'fit'
         };
 		
 		this.bodyStyle="background-color: white";
