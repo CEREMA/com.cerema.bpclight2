@@ -2,7 +2,7 @@ App.view.define('VCreateAgent', {
 
     extend: 'Ext.window.Window',
     alias: 'widget.zcreateAgent',
-    initComponent: function() {
+    initComponent: function	() {
 		
 		this.width = 430;
         this.height = 610;
@@ -220,7 +220,7 @@ App.view.define('VCreateAgent', {
 			}*/
 		];
 		
-		this.callParent();
+		//this.callParent();
 		
 	}
 	
