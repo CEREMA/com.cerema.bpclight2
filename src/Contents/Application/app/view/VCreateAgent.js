@@ -148,7 +148,7 @@ initComponent: function()
 							labelAlign: "top",
 							editable: false,
 							padding: 5,
-							store: App.store.create('App.Departements.getAll'),	
+							store: App.store.create('bpclight://unites{Kuni,LibUnic+}'),	
 							displayField: "LibUnic",
 							valueField: "Kuni",				
 							margin: {
