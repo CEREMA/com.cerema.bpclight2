@@ -9,7 +9,7 @@ initComponent: function()
 		this.layout="vbox";
 		this.border=false;
 		this.width = 430;
-        this.height = 610;
+        this.height = 630;
         this.title = "Nouvel agent";
 		this.bodyStyle="background-color: white";
         this.bbar = [
