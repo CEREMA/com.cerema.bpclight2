@@ -240,11 +240,10 @@ App.controller.define('CMain', {
 	},	
 	TCAEtablissement_onchange: function(p,record)
 	{
-        console.log(record);
 		App.get(p.up('window'),'combo#TCADepartement').setValue('');
 		App.get(p.up('window'),'combo#TCAService').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TCADepartement');
-		cbo.getStore().getProxy().extraParams.kets=record[0].data.Kets;
+		cbo.getStore().getProxy().extraParams.kets=record.data.Kets;
 		cbo.getStore().load();	
 	},
 	TCADepartement_create: function(_p) 
