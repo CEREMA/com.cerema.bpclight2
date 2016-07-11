@@ -302,7 +302,7 @@ App.controller.define('CMain', {
 	{
 		App.get(p.up('window'),'combo#TCAService').setValue('');
 		var cbo=App.get(p.up('window'),'combo#TCAService');
-		cbo.getStore().getProxy().extraParams.kuni=record[0].data.Kuni;
+		cbo.getStore().getProxy().extraParams.kuni=record.data.Kuni;
 		cbo.getStore().load();	
 	},  
 	TCACat_onchange: function(p,record)
