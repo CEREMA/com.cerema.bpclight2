@@ -27,7 +27,7 @@
     ],
     "frameworks": [
         {
-            "name": "ext",
+            "name": "EXTJS",
             "type": "desktop",
             "version": "6.0.0",
             "theme": "classic",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "name": "jquery",
+            "name": "JQUERY",
             "version": "2.1.3",
             "src": "http://cdnjs.cloudflare.com/ajax/libs/jquery/{version}/jquery.js"
         }
