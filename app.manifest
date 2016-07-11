@@ -80,7 +80,10 @@
         "bpclight",
         "temptation"
     ],
-    "packages": [],
+    "packages": [
+        "msexcel-builder",
+        "mssql"
+    ],
     "icon": {
         "background": "#FFFFFF",
         "file": "app.png"
