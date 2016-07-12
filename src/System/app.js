@@ -150,6 +150,7 @@ App = {
 							};
 						};		
 						workbook.save(function(ok){
+                            console.log(ok);
 				            res.end(tempfile.url);
 						});					
 					});	
