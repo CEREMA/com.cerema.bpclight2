@@ -48,6 +48,7 @@ App = {
 				if (req.body.name=="civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
                         var tempfile=App.temp('xlsx');
+                        console.log(tempfile);
 						var workbook = excelbuilder.createWorkbook(tempfile.path);
 						var sheet1 = workbook.createSheet('BPCLight', 150, 150);
 						var conf={};
