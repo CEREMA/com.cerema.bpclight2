@@ -48,10 +48,7 @@ App = {
 				if (req.body.name=="civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
                         var tempfile=App.temp('xlsx');
-                        console.log(tempfile);
-                        console.log(tabs);
-						var workbook = excelbuilder.createWorkbook(tempfile.dir, tempfile.filename);
-						var sheet1 = workbook.createSheet('BPCLight', 150, 150);
+						var workbook = excelbuilder.createWorkbook(tempfile.dir, tempfile.filename);                        
 						var conf={};
 						conf.cols = [
 						{
@@ -135,6 +132,9 @@ App = {
 							width: 100
 						}
 						];	
+						
+                        var sheet1 = workbook.createSheet('BPCLight', conf.cols.length, tabs.length);
+                        
 						for (var e=0;e<conf.cols.length;e++) {
 							sheet1.set(e+1,1,conf.cols[e].caption);
 							sheet1.width(e+1, conf.cols[e].width*1);
@@ -150,10 +150,12 @@ App = {
 								k++;
 							};
 						};		
+						
 						workbook.save(function(ok){
                             console.log(ok);
 				            res.end(tempfile.url);
-						});					
+						});	
+                        
 					});	
 				};
 			};
