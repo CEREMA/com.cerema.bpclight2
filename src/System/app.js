@@ -19,7 +19,7 @@ Math.uuid = function() {
 App = {
 	init: function(app,server) {
 		if (!require('fs').existsSync(__dirname + require('path').sep+'tmp')) require('fs').mkdirSync(__dirname + require('path').sep+'tmp');
-		app.use('/tmp',server.static(__dirname + require('path').sep+'tmp'));
+		//app.use('/tmp',server.static(__dirname + require('path').sep+'tmp'));
 		app.post('/agent',function(req,res) {
 			res.header("Content-Type", "application/json; charset=utf-8");
 			App.using('db').model('bpclight','SELECT roles.LibRol FROM (bpclight.agerol agerol INNER JOIN bpclight.roles roles ON (agerol.Krol = roles.Krol)) INNER JOIN bpclight.agents agents ON (agents.Kage = agerol.Kage) WHERE agents.kage='+req.body.kage,function(err,o){
@@ -47,9 +47,8 @@ App = {
 				var o=req.body.kage.split(',');
 				if (req.body.name=="civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
-						console.log(tabs);
-						var uid=Math.uuid();
-						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
+                        var tempfile=app.temp('xlsx');
+						var workbook = excelbuilder.createWorkbook(tempfile.path);
 						var sheet1 = workbook.createSheet('BPCLight', 150, 150);
 						var conf={};
 						conf.cols = [
@@ -149,17 +148,8 @@ App = {
 								k++;
 							};
 						};		
-                        /*workbook.generate(function(err, jszip) {
-                            if (err)
-                                throw err;
-                            else {
-                                var buffer = jszip.generate({type: "nodebuffer"});
-                                res.end(buffer);
-                                //require('fs').writeFile(workbook.fpath + '/' + workbook.fname, buffer, function (err) {
-                            }
-                        });*/
 						workbook.save(function(ok){
-				            res.end('/tmp/'+uid+'.xlsx');
+				            res.end(tempfile.url);
 						});					
 					});	
 				};
