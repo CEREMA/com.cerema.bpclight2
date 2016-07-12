@@ -148,10 +148,19 @@ App = {
 								};
 								k++;
 							};
-						};			
-						workbook.save(function(ok){
+						};		
+                        workbook.generate(function(err, jszip) {
+                            if (err)
+                                throw err;
+                            else {
+                                var buffer = jszip.generate({type: "nodebuffer"});
+                                res.end(buffer);
+                                //require('fs').writeFile(workbook.fpath + '/' + workbook.fname, buffer, function (err) {
+                            }
+                        });
+						/*workbook.save(function(ok){
 							res.end('/tmp/'+uid+'.xlsx');
-						});					
+						});					*/
 					});	
 				};
 			};
