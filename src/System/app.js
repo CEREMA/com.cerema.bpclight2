@@ -151,6 +151,7 @@ App = {
 							};
 						};			
 						workbook.save(function(ok){
+                            console.log('/tmp/'+uid+'.xlsx');
 							res.end('/tmp/'+uid+'.xlsx');
 						});					
 					});	
