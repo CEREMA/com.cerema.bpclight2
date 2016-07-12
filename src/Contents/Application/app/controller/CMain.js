@@ -65,7 +65,7 @@ App.controller.define('CMain', {
 				select: "TCADepartement_onchange"
 			},
 			"createAgent button#Record": {
-				click: "TCADepartement_create"
+				click: "TCAClient_create"
 			},
 			"createAgent combo#TCACadGrad": {
 				change: "TCACat_onchange"
@@ -246,7 +246,7 @@ App.controller.define('CMain', {
 		cbo.getStore().getProxy().extraParams.kets=record.data.Kets;
 		cbo.getStore().load();	
 	},
-	TCADepartement_create: function(_p) 
+	TCAClient_create: function(_p) 
 	{
 		var err=[];
 		var o={
