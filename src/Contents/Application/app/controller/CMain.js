@@ -109,7 +109,6 @@ App.controller.define('CMain', {
 				kage: kage.join(',')
 			},
 			success: function(response){
-                alert('x');
 				App.get('TPrincipal splitbutton#BtnExport').enable();
 				var url=response.responseText;
 				var iframe=document.createElement('iframe');
