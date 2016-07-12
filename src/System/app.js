@@ -50,7 +50,7 @@ App = {
                         var tempfile=App.temp('xlsx');
                         console.log(tempfile.path);
                         console.log(tabs);
-						var workbook = excelbuilder.createWorkbook(tempfile.path);
+						var workbook = excelbuilder.createWorkbook('C:\\0.xlsx');
 						var sheet1 = workbook.createSheet('BPCLight', 150, 150);
 						var conf={};
 						conf.cols = [
