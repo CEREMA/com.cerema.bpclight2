@@ -44,10 +44,10 @@ App.controller.define('CMain', {
 			},
 			"button#NewAgent" : {
 				click: "NewAgent_onclick"
-			},/*,
+			},
 			"mainform button#BtnExport" : {
 				click: "btnExport_onclick"
-			},*/
+			},
 			"mainform textfield#searchbox" : {
 				click: "onSearch",
 				keyup: "onSearch"
@@ -107,6 +107,24 @@ App.controller.define('CMain', {
 		else
 		App.get('FilterBox#FilterPanel').show();
 	},
+	btnExport_onclick: function()
+	{
+		var items=App.get('grid#GridAgents').getStore().data.items;
+		var kage=[];
+		for (var i=0;i<items.length;i++) kage.push(items[i].data.Kage);
+		Ext.Ajax.request({
+			url: '/export',
+			params: {
+				kage: kage.join(',')
+			},
+			success: function(response){
+				var url=response.responseText;
+				var iframe=document.createElement('iframe');
+				iframe.src=url;
+				document.getElementsByTagName('body')[0].appendChild(iframe);
+			}
+		});
+	},    
 	rendezVous: function()
 	{
 		App.view.create('VRendezVous').show();
