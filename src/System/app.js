@@ -47,7 +47,7 @@ App = {
 				var o=req.body.kage.split(',');
 				if (req.body.name=="civility") {
 					App.Agents.exportCiv(o,function(e,tabs) {
-                        var tempfile=app.temp('xlsx');
+                        var tempfile=App.temp('xlsx');
 						var workbook = excelbuilder.createWorkbook(tempfile.path);
 						var sheet1 = workbook.createSheet('BPCLight', 150, 150);
 						var conf={};
