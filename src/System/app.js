@@ -51,6 +51,7 @@ App = {
 						var uid=Math.uuid();
 						var workbook = excelbuilder.createWorkbook(__dirname+require('path').sep+'tmp', uid+'.xlsx');
 						var sheet1 = workbook.createSheet('BPCLight', 1500, 1500);
+                        console.log('xxxx');
 						var conf={};
 						conf.cols = [
 						{
@@ -134,7 +135,7 @@ App = {
 							width: 100
 						}
 						];	
-					
+					    console.log('zzzz');
 						for (var e=0;e<conf.cols.length;e++) {
 							sheet1.set(e+1,1,conf.cols[e].caption);
 							sheet1.width(e+1, conf.cols[e].width*1);
@@ -150,6 +151,7 @@ App = {
 								k++;
 							};
 						};			
+                        console.log('aaaaa');
 						workbook.save(function(ok){
                             console.log('/tmp/'+uid+'.xlsx');
 							res.end('/tmp/'+uid+'.xlsx');
