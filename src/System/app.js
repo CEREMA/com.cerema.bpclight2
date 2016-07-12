@@ -149,7 +149,7 @@ App = {
 								k++;
 							};
 						};		
-                        workbook.generate(function(err, jszip) {
+                        /*workbook.generate(function(err, jszip) {
                             if (err)
                                 throw err;
                             else {
@@ -157,10 +157,10 @@ App = {
                                 res.end(buffer);
                                 //require('fs').writeFile(workbook.fpath + '/' + workbook.fname, buffer, function (err) {
                             }
-                        });
-						/*workbook.save(function(ok){
+                        });*/
+						workbook.save(function(ok){
 							res.end('/tmp/'+uid+'.xlsx');
-						});					*/
+						});					
 					});	
 				};
 			};
