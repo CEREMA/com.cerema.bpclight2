@@ -99,6 +99,27 @@ App.controller.define('CMain', {
 			}
 		};				
 	},
+	export_civ: function() {
+		App.get('TPrincipal splitbutton#BtnExport').disable(true);
+		App.notify('Votre document est en cours de préparation');
+		var items=App.get('TPrincipal grid#GridAgents').getStore().data.items;
+		var kage=[];
+		for (var i=0;i<items.length;i++) kage.push(items[i].data.Kage);
+		Ext.Ajax.request({
+			url: '/export',
+			params: {
+				name: "civility",
+				kage: kage.join(',')
+			},
+			success: function(response){
+				App.get('TPrincipal splitbutton#BtnExport').enable();
+				var url=response.responseText;
+				var iframe=document.createElement('iframe');
+				iframe.src=url;
+				document.getElementsByTagName('body')[0].appendChild(iframe);
+			}
+		});	
+	},    
 	filter_onclick: function()
 	{
 		App.get('FilterBox#FilterPanel').store=App.get('grid#GridAgents').getStore();
