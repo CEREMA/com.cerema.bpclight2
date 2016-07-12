@@ -51,7 +51,7 @@ App = {
                         console.log(tempfile);
                         console.log(tabs);
 						var workbook = excelbuilder.createWorkbook(tempfile.dir, tempfile.filename);
-						var sheet1 = workbook.createSheet('BPCLight', 1500, 1500);
+						var sheet1 = workbook.createSheet('BPCLight', 150, 150);
 						var conf={};
 						conf.cols = [
 						{
