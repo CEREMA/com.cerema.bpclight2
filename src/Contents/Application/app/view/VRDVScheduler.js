@@ -24,8 +24,8 @@ App.view.define('VRDVScheduler', {
 				xtype: "schedulergrid",
 				flex: 1,
 				width: "100%",
-			    startDate     : new Date(2016, 5, 1),
-				endDate       : new Date(2016, 5, 7),
+			    startDate     : new Date(),
+				endDate       : new Date(),
 				startTime     : 6,
 				endTime       : 19,
 				
