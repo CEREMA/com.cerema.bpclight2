@@ -177,6 +177,7 @@ App.controller.define('CAgent', {
     VRDVScheduler_onshow: function(me)
     {
         // Update years
+        var now=new Date();
         var year = now.getFullYear();		
 		for (var i=-3;i<=3;i++) tab.push({year:year+i});
 		
