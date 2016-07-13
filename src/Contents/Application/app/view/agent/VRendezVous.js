@@ -29,6 +29,30 @@ App.view.define('agent.VRendezVous', {
             width: "100%",
             padding: 10,
             boxLabel: 'Dossier reçu'
+        },
+        {
+            xtype: "grid",
+            width: "100%",
+            flex: 1,
+            columns:[
+                {
+                    header: "Nature visite",
+                    width: 100
+                },
+                {
+                    header: "Date visite",
+                    width: 100
+                },
+                {
+                    header: "Heure visite",
+                    width: 100
+                },
+                {
+                    header: "Résultat",
+                    flex: 1
+                }
+            ],
+            store: App.store.create({fields:[],data:[]})
         }
 		];
 		this.callParent();
