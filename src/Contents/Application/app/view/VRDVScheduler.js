@@ -78,6 +78,13 @@ App.view.define('VRDVScheduler', {
                     ],
                     data: []
                 })
+            },
+            '->',
+            {
+                text: '<'
+            },
+            {
+                text: '>'
             }
         ];
 		
