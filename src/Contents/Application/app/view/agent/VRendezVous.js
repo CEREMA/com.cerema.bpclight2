@@ -34,6 +34,12 @@ App.view.define('agent.VRendezVous', {
             xtype: "grid",
             width: "100%",
             flex: 1,
+            tbar: [
+            {
+                text: "Ajouter",
+                itemId: "add_rdv"
+            }
+            ],
             columns:[
                 {
                     header: "Nature visite",
