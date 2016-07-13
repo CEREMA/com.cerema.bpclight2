@@ -18,7 +18,6 @@ App.controller.define('CMain', {
 	views: [
 		"VMain",
 		"VPrincipal",
-        "VRendezVous",
 		"VCreateAgent"
 	],
 	
