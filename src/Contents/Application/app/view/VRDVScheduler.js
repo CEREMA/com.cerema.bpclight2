@@ -28,15 +28,18 @@ App.view.define('VRDVScheduler', {
 				endDate       : new Date(2016, 5, 7),
 				startTime     : 6,
 				endTime       : 19,
-				resourceStore : App.resourcestore.create({
+				
+                resourceStore : App.resourcestore.create({
 					data:[        
 							{ Id : 'r0', Name : 'Unassigned', Color : '#000' }
 						 ]
 				}),
+                
 				eventStore    : App.eventstore.create({
 					fields:[],
 					data:[]
 				}),
+                
 				style         : 'border: 1px solid #d0d0d0;',
 
 				showTodayLine : true,
@@ -50,6 +53,7 @@ App.view.define('VRDVScheduler', {
 				calendarTimeAxisCfg  : {
         			height : 30
     			}
+                
 			}
 		];
 
