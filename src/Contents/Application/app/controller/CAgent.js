@@ -161,9 +161,19 @@ App.controller.define('CAgent', {
 			},
 			"TVisitData button#next": {
 				click: "visit_next"
-			}			
+			},
+            /*
+            TRendezVous
+            */
+            "TRendezVous button#add_rdv": {
+                click: "add_rdv"
+            }
 		});
 	},
+    add_rdv: function()
+    {
+        alert('x');
+    },
 	visit_prev: function(p)
 	{
 		var me=this;
