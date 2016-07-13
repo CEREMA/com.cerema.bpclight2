@@ -26,8 +26,8 @@ App.view.define('VRDVScheduler', {
 				width: "100%",
 			    startDate     : new Date(),
 				endDate       : new Date(),
-				startTime     : 6,
-				endTime       : 19,
+				startTime     : 8,
+				endTime       : 18,
 				
                 resourceStore : App.resourcestore.create({
 					data:[        
