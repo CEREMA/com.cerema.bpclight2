@@ -12,7 +12,71 @@ App.view.define('VRDVScheduler', {
         this.bbar = [
         ];
 
-        this.tbar = [
+            tbar: [
+			{
+                xtype: "combo",
+                itemId: "selectMonth",
+				width: 100,
+				editable:false,
+                store: App.store.create({
+                    fields: [
+                        "id",
+                        "month"
+                    ],
+                    data: [{
+                        id: 0,
+                        month: "Janvier"
+                    }, {
+                        id: 1,
+                        month: "Février"
+                    }, {
+                        id: 2,
+                        month: "Mars"
+                    }, {
+                        id: 3,
+                        month: "Avril"
+                    }, {
+                        id: 4,
+                        month: "Mai"
+                    }, {
+                        id: 5,
+                        month: "Juin"
+                    }, {
+                        id: 6,
+                        month: "Juillet"
+                    }, {
+                        id: 7,
+                        month: "Aout"
+                    }, {
+                        id: 8,
+                        month: "Septembre"
+                    }, {
+                        id: 9,
+                        month: "Octobre"
+                    }, {
+                        id: 10,
+                        month: "Novembre"
+                    }, {
+                        id: 11,
+                        month: "Décembre"
+                    }]
+                }),
+                displayField: "month",
+                valueField: "id"
+            }, {			
+                 xtype: "combo",
+                 itemId: "selectAnnee",
+				 width: 70,
+				 editable: false,
+                 displayField: "year",
+                 valueField: "year",
+				 store: App.store.create({
+                    fields: [
+                        "year"
+                    ],
+                    data: []
+                })
+            }
         ];
 		
         this.defaults = {
