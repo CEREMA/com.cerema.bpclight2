@@ -22,7 +22,8 @@ App.controller.define('CAgent', {
 		"agent.VAutorisation",
 		"agent.VFormation",
 		"agent.VVisit",
-		"agent.VVisit.formulaire"
+		"agent.VVisit.formulaire",
+        "agent.VRendezVous"
 	],
 	
 	models: [
