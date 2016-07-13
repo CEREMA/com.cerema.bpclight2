@@ -18,7 +18,8 @@ App.controller.define('CMain', {
 	views: [
 		"VMain",
 		"VPrincipal",
-		"VCreateAgent"
+		"VCreateAgent",
+        "VRDVScheduler"
 	],
 	
 	models: [
