@@ -57,7 +57,11 @@ App.view.define('VAgentPanel', {
 				{
 					xtype: "TVisit",
 					itemId: "tab_medic"
-				}]
+				},
+                {
+                    xtype: "TRendezVous",
+                    itemId: "tab_rdv"
+                }]
             }			
 			]
 		},
