@@ -4,7 +4,9 @@ App.view.define('VRDVScheduler', {
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
-
+        
+        this.title="Agenda Médecin de prévention";
+        
         this.layout = {
             type: 'vbox'
         };
