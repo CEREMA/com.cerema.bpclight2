@@ -176,7 +176,20 @@ App.controller.define('CAgent', {
 	},
     VRDVScheduler_onshow: function(me)
     {
-        //App.get(me,'schedulergrid').
+        // Update years
+        var year = now.getFullYear();		
+		for (var i=-3;i<=3;i++) tab.push({year:year+i});
+		
+		var store_year = App.store.create({
+			fields: [
+				"year"
+			],
+			data: tab
+		});
+
+		App.get(me,'combo#selectAnnee').bindStore(store_year);
+		App.get(me,'combo#selectAnnee').setValue(now.getFullYear());		
+
     },
     add_rdv: function()
     {
