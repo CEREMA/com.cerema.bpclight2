@@ -173,7 +173,7 @@ App.controller.define('CAgent', {
 	},
     add_rdv: function()
     {
-        alert('x');
+        App.view.create('TRDVScheduler').show().center();
     },
 	visit_prev: function(p)
 	{
