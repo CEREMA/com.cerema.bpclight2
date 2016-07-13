@@ -168,9 +168,16 @@ App.controller.define('CAgent', {
             */
             "TRendezVous button#add_rdv": {
                 click: "add_rdv"
+            },
+            "VRDVScheduler": {
+                show: "VRDVScheduler_onshow"
             }
 		});
 	},
+    VRDVScheduler_onshow: function(me)
+    {
+        //App.get(me,'schedulergrid').
+    },
     add_rdv: function()
     {
         App.view.create('VRDVScheduler').show().center();
