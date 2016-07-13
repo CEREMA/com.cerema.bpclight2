@@ -1,6 +1,6 @@
 App.view.define('VRDVScheduler', {
     extend: "Ext.window.Window",
-    alias: 'widget.TRDVScheduler',
+    alias: 'widget.VRDVScheduler',
     initComponent: function() {
         this.width = 1024;
         this.height = 660;
