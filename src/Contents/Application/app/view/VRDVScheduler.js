@@ -12,8 +12,8 @@ App.view.define('VRDVScheduler', {
         this.bbar = [
         ];
 
-            tbar: [
-			{
+        this.tbar = [
+        {
                 xtype: "combo",
                 itemId: "selectMonth",
 				width: 100,
