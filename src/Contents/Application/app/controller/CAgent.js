@@ -169,11 +169,26 @@ App.controller.define('CAgent', {
             "TRendezVous button#add_rdv": {
                 click: "add_rdv"
             },
+            /*
+            VRDVScheduler
+            */
             "VRDVScheduler": {
                 show: "VRDVScheduler_onshow"
+            },
+            "VRDVScheduler button#previous": {
+                click: "rdv_previous"
+            },
+            "VRDVScheduler button#next": {
+                click: "rdv_next"
             }
 		});
 	},
+    rdv_previous: function(me) {
+        
+    },
+    rdv_next: function(me) {
+        
+    },
     VRDVScheduler_onshow: function(me)
     {
         // Update years
