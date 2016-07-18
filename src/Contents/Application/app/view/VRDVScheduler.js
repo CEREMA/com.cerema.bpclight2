@@ -81,10 +81,12 @@ App.view.define('VRDVScheduler', {
             },
             '->',
             {
-                text: '<'
+                text: '<',
+                itemId: "previous"
             },
             {
-                text: '>'
+                text: '>',
+                itemId: "next"
             }
         ];
 		
