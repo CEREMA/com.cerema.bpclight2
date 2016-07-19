@@ -205,7 +205,9 @@ App.controller.define('CAgent', {
 			],
 			data: tab
 		});
-
+        
+        App.get(me,'combo#selectMonth').setValue(now.getMonth());
+        
 		App.get(me,'combo#selectAnnee').bindStore(store_year);
 		App.get(me,'combo#selectAnnee').setValue(now.getFullYear());		
 
