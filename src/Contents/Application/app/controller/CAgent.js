@@ -194,7 +194,7 @@ App.controller.define('CAgent', {
 	},
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
-        console.log(scheduler.getValue());
+        console.log(scheduler.getStore());
     },
     rdv_month: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
