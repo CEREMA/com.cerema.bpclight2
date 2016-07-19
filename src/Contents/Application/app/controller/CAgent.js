@@ -176,10 +176,10 @@ App.controller.define('CAgent', {
                 show: "VRDVScheduler_onshow"
             },
             "VRDVScheduler combo#selectMonth": {
-                click: "rdv_previous"
+                select: "rdv_month"
             },
             "VRDVScheduler combo#selectAnnee": {
-                click: "rdv_next"
+                select: "rdv_year"
             },            
             "VRDVScheduler button#previous": {
                 click: "rdv_previous"
@@ -189,6 +189,24 @@ App.controller.define('CAgent', {
             }
 		});
 	},
+    rdv_month: function(me) {
+        var scheduler=App.get(me.up('window'),'schedulergrid');
+        var newdate=scheduler.startDate.set({
+            day: 1,
+            month: App.get(me.up('window'),'combo#selectMonth').getValue(),
+            year: App.get(me.up('window'),'combo#selectAnnee').getValue()
+        });
+        scheduler.setStart(newdate);
+    },
+    rdv_year: function(me) {
+        var scheduler=App.get(me.up('window'),'schedulergrid');
+        var newdate=scheduler.startDate.set({
+            day: 1,
+            month: App.get(me.up('window'),'combo#selectMonth').getValue(),
+            year: App.get(me.up('window'),'combo#selectAnnee').getValue()
+        });
+        scheduler.setStart(newdate);        
+    },
     rdv_previous: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
         var newdate=scheduler.startDate.addWeeks(-1);
