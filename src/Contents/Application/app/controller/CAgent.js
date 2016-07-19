@@ -184,7 +184,8 @@ App.controller.define('CAgent', {
 		});
 	},
     rdv_previous: function(me) {
-        
+        var scheduler=App.get(me.up('window'),'schedulergrid');
+        scheduler.setStart(scheduler.startDate.addWeeks(-1));        
     },
     rdv_next: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
