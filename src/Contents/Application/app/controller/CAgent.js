@@ -188,6 +188,8 @@ App.controller.define('CAgent', {
     },
     rdv_next: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
+        var d=new Date();
+        console.log(d.parse);
         console.log(scheduler.startDate);
         //scheduler.setStart(scheduler.startDate.parse('t + 5 d'));
     },
