@@ -186,9 +186,15 @@ App.controller.define('CAgent', {
             },
             "VRDVScheduler button#next": {
                 click: "rdv_next"
+            },
+            "VRDVScheduler button#record": {
+                click: "rdv_record"
             }
 		});
 	},
+    rdv_record: function(me) {
+        var scheduler=App.get(me.up('window'),'schedulergrid');
+    },
     rdv_month: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
         var newdate=scheduler.startDate.set({
