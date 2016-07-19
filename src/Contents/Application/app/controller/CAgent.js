@@ -175,6 +175,12 @@ App.controller.define('CAgent', {
             "VRDVScheduler": {
                 show: "VRDVScheduler_onshow"
             },
+            "VRDVScheduler combo#selectMonth": {
+                click: "rdv_previous"
+            },
+            "VRDVScheduler combo#selectAnnee": {
+                click: "rdv_next"
+            },            
             "VRDVScheduler button#previous": {
                 click: "rdv_previous"
             },
