@@ -12,6 +12,7 @@ App.view.define('VRDVScheduler', {
         };
 
         this.bbar = [
+            '->',
             {
                 text: "Enregistrer",
                 itemId: "record"
