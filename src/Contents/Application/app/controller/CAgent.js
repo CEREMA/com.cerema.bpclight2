@@ -200,10 +200,12 @@ App.controller.define('CAgent', {
 			var item=store.data.items[i];
 			if (item.dirty) {
 				grid.getStore().add({
-					
+					dateVisite: item.data.startDate,
+					dateFin: item.data.endDate
 				});
 			}
-		}
+		};
+		me.up('window').close();
     },
     rdv_month: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
