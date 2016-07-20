@@ -115,10 +115,7 @@ App.view.define('VRDVScheduler', {
 						 ]
 				}),
                 
-				eventStore    : App.eventstore.create({
-					fields:[],
-					data:[]
-				}),
+				eventStore    : App.eventstore.create("bpclight://medic_rdv{rdv_id=Id,dateVisite=StartDate,finVisite=EndDate}"),
                 
 				style         : 'border: 1px solid #d0d0d0;',
 
