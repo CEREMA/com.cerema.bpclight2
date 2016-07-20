@@ -194,7 +194,16 @@ App.controller.define('CAgent', {
 	},
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
-        console.log(scheduler.getEventStore());
+		var store=scheduler.getEventStore();
+		var grid=App.get('TRendezVous grid');
+		for (var i=0;i<store.data.items.length;i++) {
+			var item=store.data.items[i];
+			if (item.dirty) {
+				grid.getStore().add({
+					
+				});
+			}
+		}
     },
     rdv_month: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
