@@ -43,18 +43,22 @@ App.view.define('agent.VRendezVous', {
             columns:[
                 {
                     header: "Nature visite",
+					dataIndex: "nature",
                     width: 100
                 },
                 {
                     header: "Date visite",
+					dataIndex: "dateVisite",
                     width: 100
                 },
                 {
                     header: "Heure visite",
+					dataIndex: "heureVisite",
                     width: 100
                 },
                 {
                     header: "Résultat",
+					dataIndex: "resultat",
                     flex: 1
                 }
             ],
