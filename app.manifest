@@ -54,7 +54,7 @@
         "CAgent"
     ],
     "modules": [
-        "Ext.ux.Scheduler2",
+        "Ext.ux.Scheduler",
         "Ext.ux.FilterBox",
         "Ext.ux.plugin.FileDrop"
     ],
