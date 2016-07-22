@@ -109,27 +109,18 @@ App.view.define('VRDVScheduler', {
 				startTime     : 8,
 				endTime       : 18,
 				
-                resourceStore : App.resourcestore.create({
-					data:[        
-							{ Id : 'r0', Name : 'Unassigned', Color : '#000' }
-						 ]
-				}),
+                resourceStore : App.store.create({data:[]},'resources'),
                 
-				eventStore    : App.eventstore.create("bpclight://medic_rdv",{autoLoad: true}),
+				eventStore    : App.store.create({data:[]},'events'),
                 
 				style         : 'border: 1px solid #d0d0d0;',
 
 				showTodayLine : true,
-    			calendarColumnClass : 'App.column.Day',
-				calendarViewPreset   : 'week',
+				viewPreset   : 'week',
 				mode                 : 'calendar',
 				eventResizeHandles   : 'end',
-				eventBodyTemplate    : '{Name}',
 				snapToIncrement      : true,
-				highlightCurrentTime : true,
-				calendarTimeAxisCfg  : {
-        			height : 30
-    			}
+				highlightCurrentTime : true
                 
 			}
 		];
