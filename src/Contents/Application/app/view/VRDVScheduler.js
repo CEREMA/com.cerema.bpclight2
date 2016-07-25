@@ -112,12 +112,12 @@ App.view.define('VRDVScheduler', {
 					
 				],
 			    enableEventDragDrop: true,
-                allowOverlap: true,                
-                resourceStore : App.store.create({data:[{Id:'D',Name:'Docteur'}]},'resources'),
+                allowOverlap    : false,
+                resourceStore   : App.store.create({data:[{Id:'D',Name:'Docteur'}]},'resources'),
                 
-				eventStore    : App.store.create({data:[]},'events'),
+				eventStore      : App.store.create({data:[]},'events'),
                 
-				style         : 'border: 1px solid #d0d0d0;',
+				style           : 'border: 1px solid #d0d0d0;',
 
 				showTodayLine : true,
 				viewPreset   : 'hourAndDay',
