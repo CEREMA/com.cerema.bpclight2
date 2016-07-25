@@ -108,7 +108,9 @@ App.view.define('VRDVScheduler', {
 				endDate       : new Date(),
 				startTime     : 8,
 				endTime       : 18,
-				
+				columns     : [
+					
+				],
                 resourceStore : App.store.create({data:[]},'resources'),
                 
 				eventStore    : App.store.create({data:[]},'events'),
