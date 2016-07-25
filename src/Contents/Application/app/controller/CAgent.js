@@ -265,7 +265,7 @@ App.controller.define('CAgent', {
         App.DB.get('bpclight://medic_rdv',function(response){
             for (var i=0;i<response.data.length;i++) {
                 data.push({
-                    ResourceId      : 'd',
+                    ResourceId      : 'D',
                     Name            : response.data[i].name, 
                     StartDate       : response.data[i].StartDate,
                     EndDate         : response.data[i].EndDate
