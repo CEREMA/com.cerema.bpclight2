@@ -111,7 +111,7 @@ App.view.define('VRDVScheduler', {
 				columns     : [
 					
 				],
-                resourceStore : App.store.create({data:[]},'resources'),
+                resourceStore : App.store.create({data:[{Id:'D',Name:'Docteur'}]},'resources'),
                 
 				eventStore    : App.store.create({data:[]},'events'),
                 
