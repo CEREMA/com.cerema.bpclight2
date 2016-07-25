@@ -264,7 +264,7 @@ App.controller.define('CAgent', {
             for (var i=0;i<response.data.length;i++) {
                 data.push({
                     ResourceId      : 'd',
-                    Name            : 'Some task', 
+                    Name            : response.data[i].name, 
                     StartDate       : response.data[i].StartDate,
                     EndDate         : response.data[i].EndDate
                 });
