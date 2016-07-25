@@ -258,6 +258,19 @@ App.controller.define('CAgent', {
         
 		App.get(me,'combo#selectAnnee').bindStore(store_year);
 		App.get(me,'combo#selectAnnee').setValue(now.getFullYear());		
+        
+        App.DB.get('bpclight://medic_rdv',function(response){
+            for (var i=0;i<response.data.length;i++) {
+                data.push({
+                    ResourceId      : 'a',
+                    Name            : 'Some task', 
+                    StartDate       : response.data[i].StartDate,
+                    EndDate         : response.data[i].EndDate
+                });
+            };
+            App.get(me,'schedulergrid').getEventStore().loadData(data);
+        });
+                
 
     },
     add_rdv: function()
