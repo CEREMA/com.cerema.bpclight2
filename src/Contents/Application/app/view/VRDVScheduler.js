@@ -111,7 +111,7 @@ App.view.define('VRDVScheduler', {
 				columns     : [
 					
 				],
-			    enableEventDragDrop: false,
+			    enableEventDragDrop: true,
                 allowOverlap: true,                
                 resourceStore : App.store.create({data:[{Id:'D',Name:'Docteur'}]},'resources'),
                 
