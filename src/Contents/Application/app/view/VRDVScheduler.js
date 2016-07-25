@@ -120,7 +120,7 @@ App.view.define('VRDVScheduler', {
 				style         : 'border: 1px solid #d0d0d0;',
 
 				showTodayLine : true,
-				viewPreset   : 'week',
+				viewPreset   : 'hourAndDay',
 				mode                 : 'calendar',
 				//eventResizeHandles   : 'end',
 				snapToIncrement      : true,
