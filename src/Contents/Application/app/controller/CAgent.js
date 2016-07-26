@@ -198,8 +198,9 @@ App.controller.define('CAgent', {
             }
 		});
 	},
-    update_rdv: function() {
-        alert('x');
+    update_rdv: function(me) {
+        var records = me.getStore().getRange();
+        console.log(records);
     },
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
