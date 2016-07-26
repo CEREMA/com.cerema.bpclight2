@@ -208,6 +208,7 @@ App.controller.define('CAgent', {
         var data=[];
 		for (var i=0;i<store.data.items.length;i++) {
 			var item=store.data.items[i];
+            console.log(item);
 			if (item.dirty) {
                 App.DB.post('bpclight://vm',{
                     kage: me.up('window').agent.Kage,
