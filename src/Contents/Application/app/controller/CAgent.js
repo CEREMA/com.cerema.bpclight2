@@ -225,7 +225,7 @@ App.controller.define('CAgent', {
                 
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
                 console.log(obj);
-                App.DB.post('bpclight://medic_rdv',ob,function(obj){
+                App.DB.post('bpclight://medic_rdv',obj,function(obj){
                     console.log(obj);
                 });
 			}
