@@ -15,7 +15,6 @@ App.view.define('agent.VRendezVous', {
         },
         {
             xtype: "checkboxfield",
-			bind: "gen_posterisque",
             itemId: "posteRisque",
             width: "100%",
             padding: 10,
@@ -23,7 +22,6 @@ App.view.define('agent.VRendezVous', {
         },
         {
             xtype: "checkboxfield",
-			bind: "gen_dossierdemande",
             width: "100%",
             itemId: "dossierdemande",
             padding: 10,
@@ -31,7 +29,6 @@ App.view.define('agent.VRendezVous', {
         },
         {
             xtype: "checkboxfield",
-			bind: "gen_dossierrecu",
             width: "100%",
             itemId: "dossierrecu",
             padding: 10,
