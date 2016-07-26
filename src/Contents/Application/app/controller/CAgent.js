@@ -206,9 +206,9 @@ App.controller.define('CAgent', {
 					dateFin: item.data.endDate
 				});
 			}
-		};
-        store.loadData(data);
+		};        
         grid.bindStore(store);
+        App.get(me,'VRendezVous grid').getStore().loadData(data);
 		me.up('window').close();
     },
     rdv_month: function(me) {
