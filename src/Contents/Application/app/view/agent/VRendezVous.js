@@ -5,6 +5,7 @@ App.view.define('agent.VRendezVous', {
 	{
 		this.title="Visites médicales";
 		this.layout="vbox";
+        this.height="100%";
 		this.border=false;
 		this.items = [
         {
@@ -52,8 +53,8 @@ App.view.define('agent.VRendezVous', {
                         xtype: 'combo',
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_natures'),
-                        displayField: "kvm_natures",
-                        valueField: "nature"
+                        displayField: "nature",
+                        valueField: "kvm_natures"
                     },
                     width: 100
                 },
@@ -74,8 +75,8 @@ App.view.define('agent.VRendezVous', {
                         xtype: 'combo',
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_resultats'),
-                        displayField: "kvm_resultats",
-                        valueField: "resultat"
+                        displayField: "resultat",
+                        valueField: "kvm_resultats"
                     },
                     flex: 1
                 }
