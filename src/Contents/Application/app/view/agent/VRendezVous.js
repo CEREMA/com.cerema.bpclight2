@@ -58,10 +58,7 @@ App.view.define('agent.VRendezVous', {
                     },
                     flex: 1,
                     renderer: function(value) {
-                        App.DB.get("bpclight://vm_natures?kvm_natures="+value,function(result){
-                            console.log(result);
-                            return result.data[0].nature;
-                        });                        
+                        return App.vm_natures[value];
                     }
                 },
                 {
@@ -86,11 +83,7 @@ App.view.define('agent.VRendezVous', {
                         wdith: "100%"
                     },
                     renderer : function (value) {
-                        App.DB.get("bpclight://vm_resultats?kvm_resultats="+value,function(result){
-                            console.log(result);
-                            //alert(result.data[0].resultat)
-                            return "bonjour";
-                        });
+                        return App.vm_resultats[value];
                     },                    
                     flex: 1
                 }
