@@ -169,6 +169,9 @@ App.controller.define('CAgent', {
             "TRendezVous button#add_rdv": {
                 click: "add_rdv"
             },
+            "TRendezVous": {
+                show: "TRendezVous_onshow"  
+            },
             /*
             VRDVScheduler
             */
@@ -192,6 +195,11 @@ App.controller.define('CAgent', {
             }
 		});
 	},
+    TRendezVous_onshow: function(me) {
+        var store=App.store.create('bpclight://vm?kage='+me._id);
+        App.get(me,'grid').bindStore(store);
+        App.get(me,'grid').getStore().load();
+    },
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
 		var store=scheduler.getEventStore();
