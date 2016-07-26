@@ -175,6 +175,9 @@ App.controller.define('CAgent', {
             "TRendezVous grid": {
                 edit: "update_rdv"
             },
+            "TRendezVous checkboxfield": {
+                change: "rdv_check_change"  
+            },
             /*
             VRDVScheduler
             */
@@ -198,6 +201,10 @@ App.controller.define('CAgent', {
             }
 		});
 	},
+    rdv_check_change: function (checkbox, newVal, oldVal) {  
+        console.log(checkbox);
+        console.log(newVal);
+    },
     update_rdv: function(me) {
         var grid=App.get('TRendezVous grid');
         var records = grid.getStore().getRange();
