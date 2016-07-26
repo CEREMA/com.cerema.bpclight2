@@ -56,7 +56,7 @@ App.view.define('agent.VRendezVous', {
                         valueField: "kvm_natures",
                         wdith: "100%"
                     },
-                    flex: 1
+                    flex: 1,
                     renderer : function (value) {
                         console.log(App.vm_natures);
                         if (App.vm_natures[value]) return App.vm_natures[value].nature;
