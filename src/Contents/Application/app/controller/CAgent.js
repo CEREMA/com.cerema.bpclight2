@@ -210,17 +210,17 @@ App.controller.define('CAgent', {
 			var item=store.data.items[i];
             console.log(item);
 			if (item.dirty) {
-                App.DB.post('bpclight://vm',{
+                /*App.DB.post('bpclight://vm',{
                     kage: me.up('window').agent.Kage,
 					date_visite: item.data.StartDate,
 					fin_visite: item.data.EndDate                    
-                });
+                });*/
                 var obj={
                     ResourceId: 'D',
                     kage: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
-					EndDate: item.data.EndDate,
-                    Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
+					EndDate: item.data.EndDate/*,
+                    Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom*/
                 };
                 
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
