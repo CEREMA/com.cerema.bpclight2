@@ -34,7 +34,7 @@ App.view.define('agent.VRendezVous', {
         {
             xtype: "grid",
             width: "100%",
-            flex: 1,
+            height: 400,
             tbar: [
             {
                 text: "Ajouter",
@@ -56,7 +56,7 @@ App.view.define('agent.VRendezVous', {
                         displayField: "nature",
                         valueField: "kvm_natures"
                     },
-                    width: 100
+                    flex: 1
                 },
                 {
                     header: "Date visite",
