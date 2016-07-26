@@ -56,10 +56,7 @@ App.view.define('agent.VRendezVous', {
                         valueField: "kvm_natures",
                         wdith: "100%"
                     },
-                    flex: 1,
-                    renderer: function(value) {
-                        return App.vm_natures[value].nature;
-                    }
+                    flex: 1
                 },
                 {
                     header: "Date visite",
@@ -83,7 +80,12 @@ App.view.define('agent.VRendezVous', {
                         wdith: "100%"
                     },
                     renderer : function (value) {
-                        return App.vm_resultats[value].resultat;
+                        var myStore=App.store.create('bpclight://vm_resultats');
+                        var index = myStore.findExact('kvm_resultats',val); 
+                        if (index != -1){
+                            rs = myStore.getAt(index).data; 
+                            return rs.resultat; 
+                        }
                     },                    
                     flex: 1
                 }
