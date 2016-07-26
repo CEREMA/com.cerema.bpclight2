@@ -215,14 +215,16 @@ App.controller.define('CAgent', {
 					date_visite: item.data.StartDate,
 					fin_visite: item.data.EndDate                    
                 });
-                App.DB.post('bpclight://medic_rdv',{
-                    rdv_id: item.data.internalId,
+                var obj={
                     ResourceId: 'D',
                     kage: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
 					EndDate: item.data.EndDate,
                     Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
-                });
+                };
+                alert(item.data.internalId);
+                if (item.data.internalId) obj.rdv_id=item.data.internalId;
+                App.DB.post('bpclight://medic_rdv',obj);
 			}
 		};        
         grid.getStore().load();
