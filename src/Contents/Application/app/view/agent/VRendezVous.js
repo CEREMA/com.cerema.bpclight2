@@ -34,7 +34,7 @@ App.view.define('agent.VRendezVous', {
         {
             xtype: "grid",
             width: "100%",
-            height: 400,
+            height: 420,
             tbar: [
             {
                 text: "Ajouter",
