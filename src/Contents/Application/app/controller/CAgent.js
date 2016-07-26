@@ -222,10 +222,12 @@ App.controller.define('CAgent', {
 					EndDate: item.data.EndDate,
                     Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
                 };
-                alert(item.data.internalId);
+                
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
                 console.log(obj);
-                App.DB.post('bpclight://medic_rdv',obj);
+                App.DB.post('bpclight://medic_rdv',ob,function(obj){
+                    console.log(obj);
+                });
 			}
 		};        
         grid.getStore().load();
