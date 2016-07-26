@@ -166,11 +166,11 @@ App.controller.define('CAgent', {
             /*
             TRendezVous
             */
-            "TRendezVous button#add_rdv": {
-                click: "add_rdv"
-            },
             "TRendezVous": {
                 show: "TRendezVous_onshow"  
+            },
+            "TRendezVous grid": {
+                edit: "update_rdv"
             },
             /*
             VRDVScheduler
@@ -195,6 +195,9 @@ App.controller.define('CAgent', {
             }
 		});
 	},
+    update_rdv: function() {
+        alert('x');
+    },
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
         App.get(me,'grid').bindStore(store);
@@ -210,11 +213,6 @@ App.controller.define('CAgent', {
 			var item=store.data.items[i];
             console.log(item);
 			if (item.dirty) {
-                /*App.DB.post('bpclight://vm',{
-                    kage: me.up('window').agent.Kage,
-					date_visite: item.data.StartDate,
-					fin_visite: item.data.EndDate                    
-                });*/
                 var obj={
                     ResourceId: 1,
                     kage: me.up('window').agent.Kage,
