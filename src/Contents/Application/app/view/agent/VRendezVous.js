@@ -86,7 +86,7 @@ App.view.define('agent.VRendezVous', {
                     },
                     renderer : function (value, meta, record, rowIndex, columnIndex, view) {
                         for (var i=0;i<App.vm_resultats.length;i++) {
-                            if (App.vm_resultats[i].vm_resultats==value) return App.vm_resultats[i].resultat;
+                            if (App.vm_resultats[i].kvm_resultats==value) return App.vm_resultats[i].resultat;
                         };
                     },                    
                     flex: 1
