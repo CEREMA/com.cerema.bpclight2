@@ -58,7 +58,7 @@ App.view.define('agent.VRendezVous', {
                     },
                     flex: 1,
                     renderer: function(value) {
-                        return App.vm_natures[value];
+                        return App.vm_natures[value].nature;
                     }
                 },
                 {
@@ -83,7 +83,7 @@ App.view.define('agent.VRendezVous', {
                         wdith: "100%"
                     },
                     renderer : function (value) {
-                        return App.vm_resultats[value];
+                        return App.vm_resultats[value].resultat;
                     },                    
                     flex: 1
                 }
