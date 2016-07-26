@@ -238,6 +238,16 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 
+        App.vm_resultats=[];
+        App.vm_natures=[];
+        
+        App.DB.get("bpclight://vm_resultats",function(result){
+            App.vm_resultats.push(result.data);
+        });
+        App.DB.get("bpclight://vm_natures",function(result){
+            App.vm_natures.push(result.data);
+        });
+
 		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
 		// update
 		App.Update.actif(function(err,response) {
