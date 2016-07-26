@@ -57,9 +57,9 @@ App.view.define('agent.VRendezVous', {
                         wdith: "100%"
                     },
                     flex: 1,
-                    renderer : function (value) {
+                    renderer : function (value, meta, record, rowIndex, columnIndex, view) {
                         console.log(App.vm_natures);
-                        if (App.vm_natures[value]) return App.vm_natures[value].nature;
+                        if (App.vm_natures[rowIndex]) return App.vm_natures[rowIndex].nature;
                     }
                 },
                 {
@@ -83,9 +83,9 @@ App.view.define('agent.VRendezVous', {
                         valueField: "kvm_resultats",
                         wdith: "100%"
                     },
-                    renderer : function (value) {
+                    renderer : function (value, meta, record, rowIndex, columnIndex, view) {
                         console.log(App.vm_resultats);
-                        if (App.vm_resultats[value]) return App.vm_resultats[value].resultat;
+                        if (App.vm_resultats[rowIndex]) return App.vm_resultats[rowIndex].resultat;
                     },                    
                     flex: 1
                 }
