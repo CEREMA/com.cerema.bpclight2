@@ -216,6 +216,7 @@ App.controller.define('CAgent', {
 					fin_visite: item.data.EndDate                    
                 });
                 App.DB.post('bpclight://medic_rdv',{
+                    rdv_id: item.data.internalId,
                     ResourceId: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
 					EndDate: item.data.EndDate,
