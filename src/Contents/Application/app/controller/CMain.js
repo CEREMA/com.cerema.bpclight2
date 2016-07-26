@@ -132,9 +132,9 @@ App.controller.define('CMain', {
 		else
 		App.get('FilterBox#FilterPanel').show();
 	},
-	rendezVous: function()
+	rendezVous: function(me)
 	{
-		App.view.create('VRendezVous').show();
+		App.view.create('VRendezVous',{agent:me.up('window').agent}).show();
 	},
 	NewAgent_onclick: function()
 	{
