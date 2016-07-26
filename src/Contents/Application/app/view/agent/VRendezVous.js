@@ -73,21 +73,13 @@ App.view.define('agent.VRendezVous', {
                     header: "Résultat",
 					dataIndex: "resultat",
                     editor: {
-                        xtype: 'combo',
+                        xtype: 'combobox',
+                        queryMode: "local",
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_resultats'),
                         displayField: "resultat",
                         valueField: "kvm_resultats",
                         wdith: "100%"
-                    },
-                    renderer: function(val, meta, record, rindex, cindex, store) {
-                        console.log(val);
-                        console.log(meta);
-                        console.log(record);
-                        console.log(rindex);
-                        console.log(store);
-                        /*var indx = comboStore.find('value', val);
-                        return idx !== -1 ? comboStore.getAt(idx).get('label');*/
                     },
                     flex: 1
                 }
