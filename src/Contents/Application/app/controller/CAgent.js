@@ -211,11 +211,13 @@ App.controller.define('CAgent', {
 			var item=store.data.items[i];
 			if (item.dirty) {
 				grid.getStore().add({
-					dateVisite: item.data.StartDate,
-					dateFin: item.data.EndDate
+                    kage: me.up('window').agent.Kage,
+					date_visite: item.data.StartDate,
+					fin_visite: item.data.EndDate
 				});
 			}
-		};                
+		};        
+        
 		me.up('window').close();
     },
     rdv_month: function(me) {
