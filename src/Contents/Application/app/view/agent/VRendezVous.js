@@ -59,6 +59,7 @@ App.view.define('agent.VRendezVous', {
                     flex: 1,
                     renderer: function(value) {
                         App.DB.get("bpclight://vm_natures?kvm_natures="+value,function(result){
+                            console.log(result);
                             return result.data[0].nature;
                         });                        
                     }
@@ -86,6 +87,7 @@ App.view.define('agent.VRendezVous', {
                     },
                     renderer : function (value) {
                         App.DB.get("bpclight://vm_resultats?kvm_resultats="+value,function(result){
+                            console.log(result);
                             return result.data[0].resultat;
                         });
                     },                    
