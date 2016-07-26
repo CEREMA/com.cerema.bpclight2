@@ -80,6 +80,17 @@ App.view.define('agent.VRendezVous', {
                         valueField: "kvm_resultats",
                         wdith: "100%"
                     },
+                    renderer : function (value) {
+                        App.DB.get("bpclight://vm_resultats?kvm_resultats="+value,function(result){
+                            console.log(result);
+                        });
+                    /*switch (value) {
+                        case 1:
+                            return 'Parent';
+                        case 2:
+                            return 'Child';
+                    }*/
+                    },                    
                     flex: 1
                 }
             ],
