@@ -294,7 +294,7 @@ App.controller.define('CAgent', {
     },
     add_rdv: function()
     {
-        App.view.create('VRDVScheduler',{modal: true}).show().center();
+        App.view.create('VRDVScheduler',{agent:me.up('window').agent,modal: true}).show().center();
     },
 	visit_prev: function(p)
 	{
