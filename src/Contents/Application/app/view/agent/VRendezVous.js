@@ -54,7 +54,8 @@ App.view.define('agent.VRendezVous', {
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_natures'),
                         displayField: "nature",
-                        valueField: "kvm_natures"
+                        valueField: "kvm_natures",
+                        wdith: "100%"
                     },
                     flex: 1
                 },
@@ -76,7 +77,8 @@ App.view.define('agent.VRendezVous', {
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_resultats'),
                         displayField: "resultat",
-                        valueField: "kvm_resultats"
+                        valueField: "kvm_resultats",
+                        wdith: "100%"
                     },
                     flex: 1
                 }
