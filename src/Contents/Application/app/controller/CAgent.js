@@ -292,7 +292,7 @@ App.controller.define('CAgent', {
         });
         
     },
-    add_rdv: function()
+    add_rdv: function(me)
     {
         App.view.create('VRDVScheduler',{agent:me.up('window').agent,modal: true}).show().center();
     },
