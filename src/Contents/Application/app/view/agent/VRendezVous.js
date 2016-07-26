@@ -88,7 +88,7 @@ App.view.define('agent.VRendezVous', {
                     flex: 1
                 }
             ],
-            store: App.store.create({fields:["nature","dateVisite","resultat","dateFin"],data:[{nature:"yes",dateVisite: "fjsldkfjls"}]})
+            store: App.store.create({fields:["nature","dateVisite","resultat","dateFin"],data:[{nature:0,dateVisite: "fjsldkfjls"}]})
         }
 		];
 		this.callParent();
