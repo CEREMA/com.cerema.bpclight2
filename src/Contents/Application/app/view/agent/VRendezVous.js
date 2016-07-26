@@ -58,8 +58,9 @@ App.view.define('agent.VRendezVous', {
                     },
                     flex: 1,
                     renderer : function (value, meta, record, rowIndex, columnIndex, view) {
-                        console.log(App.vm_natures);
-                        if (App.vm_natures[rowIndex]) return App.vm_natures[rowIndex].nature;
+                        for (var i=0;i<App.vm_natures.length;i++) {
+                            if (App.vm_natures[i].kvm_natures==value) return App.vm_natures[i].nature;
+                        };
                     }
                 },
                 {
@@ -84,8 +85,9 @@ App.view.define('agent.VRendezVous', {
                         wdith: "100%"
                     },
                     renderer : function (value, meta, record, rowIndex, columnIndex, view) {
-                        console.log(App.vm_resultats);
-                        if (App.vm_resultats[rowIndex]) return App.vm_resultats[rowIndex].resultat;
+                        for (var i=0;i<App.vm_resultats.length;i++) {
+                            if (App.vm_resultats[i].vm_resultats==value) return App.vm_resultats[i].resultat;
+                        };
                     },                    
                     flex: 1
                 }
