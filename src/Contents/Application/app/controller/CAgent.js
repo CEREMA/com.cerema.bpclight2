@@ -202,6 +202,7 @@ App.controller.define('CAgent', {
 			var item=store.data.items[i];
 			if (item.dirty) {
 				data.push({
+                    nature: "yes",
 					dateVisite: item.data.startDate,
 					dateFin: item.data.endDate
 				});
