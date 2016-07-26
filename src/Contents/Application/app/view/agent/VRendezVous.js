@@ -72,7 +72,7 @@ App.view.define('agent.VRendezVous', {
                     header: "Résultat",
 					dataIndex: "resultat",
                     editor: {
-                        xtype: 'combobox',
+                        xtype: 'combo',
                         queryMode: "local",
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_resultats'),
