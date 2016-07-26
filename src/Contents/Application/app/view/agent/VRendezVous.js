@@ -56,7 +56,12 @@ App.view.define('agent.VRendezVous', {
                         valueField: "kvm_natures",
                         wdith: "100%"
                     },
-                    flex: 1
+                    flex: 1,
+                    renderer: function(value) {
+                        App.DB.get("bpclight://vm_natures?kvm_natures="+value,function(result){
+                            return result.data[0].nature;
+                        });                        
+                    }
                 },
                 {
                     header: "Date visite",
@@ -81,14 +86,8 @@ App.view.define('agent.VRendezVous', {
                     },
                     renderer : function (value) {
                         App.DB.get("bpclight://vm_resultats?kvm_resultats="+value,function(result){
-                            console.log(result);
+                            return result.data[0].resultat;
                         });
-                    /*switch (value) {
-                        case 1:
-                            return 'Parent';
-                        case 2:
-                            return 'Child';
-                    }*/
                     },                    
                     flex: 1
                 }
