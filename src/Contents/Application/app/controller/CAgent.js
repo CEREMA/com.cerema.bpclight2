@@ -224,6 +224,7 @@ App.controller.define('CAgent', {
                 };
                 alert(item.data.internalId);
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
+                console.log(obj);
                 App.DB.post('bpclight://medic_rdv',obj);
 			}
 		};        
