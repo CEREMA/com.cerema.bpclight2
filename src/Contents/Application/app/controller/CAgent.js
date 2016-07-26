@@ -274,16 +274,6 @@ App.controller.define('CAgent', {
             App.get(me,'schedulergrid').getEventStore().loadData(data);
         });
         
-        App.vm_resultats=[];
-        App.vm_natures=[];
-        
-        App.DB.get("bpclight://vm_resultats",function(result){
-            App.vm_resultats.push(result.data);
-        });
-        App.DB.get("bpclight://vm_natures",function(result){
-            App.vm_natures.push(result.data);
-        });
-
     },
     add_rdv: function()
     {
