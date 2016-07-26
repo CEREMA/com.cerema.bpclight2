@@ -47,7 +47,7 @@ App.view.define('agent.VRendezVous', {
             columns:[
                 {
                     header: "Nature visite",
-					dataIndex: "nature_visite",
+					dataIndex: "nature",
                     editor: {
                         xtype: 'combo',
                         allowBlank: false,
@@ -64,13 +64,13 @@ App.view.define('agent.VRendezVous', {
                 },
                 {
                     header: "Date visite",
-					dataIndex: "date_visite",
+					dataIndex: "StartDate",
                     width: 100,
                     renderer:Ext.util.Format.dateRenderer('d/m/Y g:i')
                 },
                 {
                     header: "Résultat",
-					dataIndex: "resultats",
+					dataIndex: "resultat",
                     editor: {
                         xtype: 'combo',
                         allowBlank: false,
