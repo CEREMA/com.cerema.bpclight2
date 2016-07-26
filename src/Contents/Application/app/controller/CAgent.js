@@ -218,7 +218,7 @@ App.controller.define('CAgent', {
                     ResourceId: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
 					EndDate: item.data.EndDate,
-                    Name: me.up('window').agent.prenom+' '+me.up('window').agent.nom
+                    Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
                 });
 			}
 		};        
