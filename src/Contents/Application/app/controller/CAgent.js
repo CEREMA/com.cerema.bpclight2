@@ -275,6 +275,7 @@ App.controller.define('CAgent', {
         });
         
         App.vm_resultats=[];
+        App.vm_natures=[];
         
         App.DB.get("bpclight://vm_resultats",function(result){
             App.vm_resultats.push(result.data);
