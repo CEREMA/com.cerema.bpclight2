@@ -41,9 +41,8 @@ App.view.define('agent.VRendezVous', {
                 itemId: "add_rdv"
             }
             ],
-            plugins: [Ext.create('Ext.grid.plugin.RowEditing', {
-                clicksToMoveEditor: 1,
-                autoCancel: false
+            plugins: [Ext.create('Ext.grid.plugin.CellEditing', {
+                clicksToEdit : 1
             })],
             columns:[
                 {
