@@ -88,6 +88,7 @@ App.view.define('agent.VRendezVous', {
                     renderer : function (value) {
                         App.DB.get("bpclight://vm_resultats?kvm_resultats="+value,function(result){
                             console.log(result);
+                            alert(result.data[0].resultat)
                             return result.data[0].resultat;
                         });
                     },                    
