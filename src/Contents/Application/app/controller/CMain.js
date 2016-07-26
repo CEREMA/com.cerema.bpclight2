@@ -134,7 +134,7 @@ App.controller.define('CMain', {
 	},
 	rendezVous: function(me)
 	{
-		App.view.create('VRendezVous',{agent:me.up('window').agent}).show();
+		App.view.create('VRendezVous').show();
 	},
 	NewAgent_onclick: function()
 	{
