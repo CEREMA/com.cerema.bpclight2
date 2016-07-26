@@ -199,8 +199,13 @@ App.controller.define('CAgent', {
 		});
 	},
     update_rdv: function(me) {
-        var records = App.get('TRendezVous grid').getStore().getRange();
-        console.log(records);
+        var grid=App.get('TRendezVous grid');
+        var records = grid.getStore().getRange();
+        for (var i=0;i<records.length;i++) {
+            var rec=records[i];
+            App.DB.post('bpclight://medic_rdv',rec.data[0]);
+        };
+        grid.getStore().load();
     },
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
