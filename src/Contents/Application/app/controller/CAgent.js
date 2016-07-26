@@ -169,6 +169,9 @@ App.controller.define('CAgent', {
             "TRendezVous": {
                 show: "TRendezVous_onshow"  
             },
+            "TRendezVous button#add_rdv": {
+                "click": "add_rdv"     
+            },
             "TRendezVous grid": {
                 edit: "update_rdv"
             },
