@@ -196,6 +196,7 @@ App.controller.define('CAgent', {
 		});
 	},
     TRendezVous_onshow: function(me) {
+        alert(me._id);
         var store=App.store.create('bpclight://vm?kage='+me._id);
         App.get(me,'grid').bindStore(store);
         App.get(me,'grid').getStore().load();
