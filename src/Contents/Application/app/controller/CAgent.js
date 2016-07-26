@@ -217,7 +217,8 @@ App.controller.define('CAgent', {
                 });
                 App.DB.post('bpclight://medic_rdv',{
                     rdv_id: item.data.internalId,
-                    ResourceId: me.up('window').agent.Kage,
+                    ResourceId: 'D',
+                    kage: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
 					EndDate: item.data.EndDate,
                     Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
@@ -283,6 +284,7 @@ App.controller.define('CAgent', {
         App.DB.get('bpclight://medic_rdv',function(response){
             for (var i=0;i<response.data.length;i++) {
                 data.push({
+                    rdv_id: item.data.internalId,
                     ResourceId      : 'D',
                     Name            : response.data[i].Name, 
                     StartDate       : response.data[i].StartDate,
