@@ -201,16 +201,13 @@ App.controller.define('CAgent', {
 		for (var i=0;i<store.data.items.length;i++) {
 			var item=store.data.items[i];
 			if (item.dirty) {
-				data.push({
+				grid.getStore().add({
                     nature: "yes",
-					dateVisite: item.data.startDate,
+					dateVisite: item.data.startDate.toString(),
 					dateFin: item.data.endDate
 				});
 			}
-		};        
-        var store=App.store.create({fields:["nature","dateVisite","resultat","dateFin"],data:data});
-        grid.bindStore(store);
-        grid.getStore().load();
+		};                
 		me.up('window').close();
     },
     rdv_month: function(me) {
