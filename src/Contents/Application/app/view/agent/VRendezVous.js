@@ -40,10 +40,21 @@ App.view.define('agent.VRendezVous', {
                 itemId: "add_rdv"
             }
             ],
+            plugins: [Ext.create('Ext.grid.plugin.RowEditing', {
+                clicksToMoveEditor: 1,
+                autoCancel: false
+            })],
             columns:[
                 {
                     header: "Nature visite",
 					dataIndex: "nature",
+                    editor: {
+                        xtype: 'combo',
+                        allowBlank: false,
+                        store: App.store.create('bpclight://vm_natures'),
+                        displayField: "kvm_natures",
+                        valueField: "nature"
+                    },
                     width: 100
                 },
                 {
@@ -59,6 +70,13 @@ App.view.define('agent.VRendezVous', {
                 {
                     header: "Résultat",
 					dataIndex: "resultat",
+                    editor: {
+                        xtype: 'combo',
+                        allowBlank: false,
+                        store: App.store.create('bpclight://vm_resultats'),
+                        displayField: "kvm_resultats",
+                        valueField: "resultat"
+                    },
                     flex: 1
                 }
             ],
