@@ -79,7 +79,7 @@ App.view.define('agent.VRendezVous', {
                         valueField: "kvm_resultats",
                         wdith: "100%"
                     },
-                    renderer : function (value) {
+                    renderer : function (val) {
                         var myStore=App.store.create('bpclight://vm_resultats');
                         var index = myStore.findExact('kvm_resultats',val); 
                         if (index != -1){
