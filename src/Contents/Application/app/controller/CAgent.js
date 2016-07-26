@@ -214,13 +214,12 @@ App.controller.define('CAgent', {
 					date_visite: item.data.StartDate,
 					fin_visite: item.data.EndDate                    
                 });
-                /*
-				grid.getStore().add({
-                    kage: me.up('window').agent.Kage,
-					date_visite: item.data.StartDate,
-					fin_visite: item.data.EndDate                    
-				});
-                */
+                App.DB.post('bpclight://medic_rdv',{
+                    ResourceId: me.up('window').agent.Kage,
+					StartDate: item.data.StartDate,
+					EndDate: item.data.EndDate,
+                    Name: 
+                });
 			}
 		};        
         grid.getStore().load();
@@ -283,7 +282,7 @@ App.controller.define('CAgent', {
             for (var i=0;i<response.data.length;i++) {
                 data.push({
                     ResourceId      : 'D',
-                    Name            : response.data[i].name, 
+                    Name            : response.data[i].Name, 
                     StartDate       : response.data[i].StartDate,
                     EndDate         : response.data[i].EndDate
                 });
