@@ -202,9 +202,8 @@ App.controller.define('CAgent', {
         var grid=App.get('TRendezVous grid');
         var records = grid.getStore().getRange();
         for (var i=0;i<records.length;i++) {
-            var rec=records[i];
-            console.log(rec);
-            App.DB.post('bpclight://medic_rdv',rec.data[0],function() {
+            var rec=records[i].data;
+            App.DB.post('bpclight://medic_rdv',rec.data,function() {
                 grid.getStore().load();
             });
         };
