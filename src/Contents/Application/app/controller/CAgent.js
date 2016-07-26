@@ -216,11 +216,11 @@ App.controller.define('CAgent', {
 					fin_visite: item.data.EndDate                    
                 });*/
                 var obj={
-                    ResourceId: 'D',
+                    ResourceId: 1,
                     kage: me.up('window').agent.Kage,
 					StartDate: item.data.StartDate,
-					EndDate: item.data.EndDate/*,
-                    Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom*/
+					EndDate: item.data.EndDate,
+                    Name: me.up('window').agent.Prenom+' '+me.up('window').agent.Nom
                 };
                 
                 if (item.data.internalId) obj.rdv_id=item.data.internalId;
@@ -290,7 +290,7 @@ App.controller.define('CAgent', {
             for (var i=0;i<response.data.length;i++) {
                 data.push({
                     internalId      : response.data[i].rdv_id,
-                    ResourceId      : 'D',
+                    ResourceId      : 1,
                     Name            : response.data[i].Name, 
                     StartDate       : response.data[i].StartDate,
                     EndDate         : response.data[i].EndDate
