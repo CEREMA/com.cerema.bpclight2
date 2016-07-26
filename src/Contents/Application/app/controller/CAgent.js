@@ -227,9 +227,7 @@ App.controller.define('CAgent', {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
         App.get(me,'grid').bindStore(store);
         App.get(me,'grid').getStore().load();
-		App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,function(data){
-			
-		});
+		App.DB.get('bpclight://medic_gen?kage='+me.up('window').agent.Kage,App.get("TRendezVous"));
     },
     rdv_record: function(me) {
         var scheduler=App.get(me.up('window'),'schedulergrid');
