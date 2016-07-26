@@ -203,6 +203,7 @@ App.controller.define('CAgent', {
         var records = grid.getStore().getRange();
         for (var i=0;i<records.length;i++) {
             var rec=records[i];
+            console.log(rec);
             App.DB.post('bpclight://medic_rdv',rec.data[0],function() {
                 grid.getStore().load();
             });
