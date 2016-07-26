@@ -199,7 +199,7 @@ App.controller.define('CAgent', {
 		});
 	},
     update_rdv: function(me) {
-        var records = me.getStore().getRange();
+        var records = me.up('grid').getStore().getRange();
         console.log(records);
     },
     TRendezVous_onshow: function(me) {
