@@ -209,7 +209,7 @@ App.controller.define('CAgent', {
 		for (var i=0;i<store.data.items.length;i++) {
 			var item=store.data.items[i];
 			if (item.dirty) {
-                App.DB.update('bpclight://vm',{
+                App.DB.post('bpclight://vm',{
                     kage: me.up('window').agent.Kage,
 					date_visite: item.data.StartDate,
 					fin_visite: item.data.EndDate                    
