@@ -73,7 +73,6 @@ App.view.define('agent.VRendezVous', {
 					dataIndex: "resultat",
                     editor: {
                         xtype: 'combo',
-                        queryMode: "local",
                         allowBlank: false,
                         store: App.store.create('bpclight://vm_resultats'),
                         displayField: "resultat",
