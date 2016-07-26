@@ -203,9 +203,11 @@ App.controller.define('CAgent', {
         var records = grid.getStore().getRange();
         for (var i=0;i<records.length;i++) {
             var rec=records[i];
-            App.DB.post('bpclight://medic_rdv',rec.data[0]);
+            App.DB.post('bpclight://medic_rdv',rec.data[0],function() {
+                grid.getStore().load();
+            });
         };
-        grid.getStore().load();
+        
     },
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
