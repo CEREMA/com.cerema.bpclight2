@@ -196,7 +196,7 @@ App.controller.define('CAgent', {
         var scheduler=App.get(me.up('window'),'schedulergrid');
 		var store=scheduler.getEventStore();
 		var grid=App.get('TRendezVous grid');
-        var store=App.store.create({fields:["nature","dateVisite","resultat","dateFin"],data:[]});
+        
         var data=[];
 		for (var i=0;i<store.data.items.length;i++) {
 			var item=store.data.items[i];
@@ -207,8 +207,9 @@ App.controller.define('CAgent', {
 				});
 			}
 		};        
+        var store=App.store.create({fields:["nature","dateVisite","resultat","dateFin"],data:data});
         grid.bindStore(store);
-        grid.getStore().loadData(data);
+        grid.getStore().load();
 		me.up('window').close();
     },
     rdv_month: function(me) {
