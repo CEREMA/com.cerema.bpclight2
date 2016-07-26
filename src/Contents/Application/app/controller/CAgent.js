@@ -201,9 +201,16 @@ App.controller.define('CAgent', {
             }
 		});
 	},
-    rdv_check_change: function (checkbox, newVal, oldVal) {  
-        console.log(checkbox);
-        console.log(newVal);
+    rdv_check_change: function (checkbox, val) { 
+        var obj={
+            kage: checkbox.up('window').agent.Kage
+        };
+        if (checkbox.itemId=="posteRisque") obj.gen_posterisque=val;
+        if (checkbox.itemId=="dossierdemande") obj.gen_dossierdemande=val;
+        if (checkbox.itemId=="dossierrecu") obj.gen_dossierrecu=val;
+        App.DB.post('bpclight://medic_gen',obj,function(e){
+            console.log(e);
+        })
     },
     update_rdv: function(me) {
         var grid=App.get('TRendezVous grid');
