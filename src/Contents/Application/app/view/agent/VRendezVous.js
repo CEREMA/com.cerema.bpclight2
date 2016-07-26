@@ -65,12 +65,8 @@ App.view.define('agent.VRendezVous', {
                 {
                     header: "Date visite",
 					dataIndex: "date_visite",
-                    width: 100
-                },
-                {
-                    header: "Heure visite",
-					dataIndex: "heure_visite",
-                    width: 100
+                    width: 100,
+                    renderer:Ext.util.Format.dateRenderer('d/m/Y g:i')
                 },
                 {
                     header: "Résultat",
