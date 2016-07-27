@@ -148,12 +148,11 @@ App.view.define('VRDVScheduler', {
                 timeAxis    : {
                     autoAdjust  : false
                 },
-
 			    enableEventDragDrop: true,
                 allowOverlap    : false,
                 resourceStore   : App.store.create({data:[{Id:'D',Name:'Docteur'}]},'resources'),
                 
-				eventStore      : App.store.create('App.RendezVous.getAll','events'),
+				eventStore      : App.store.create('App.RendezVous.getAll',{},'events'),
                 
 				style           : 'border: 1px solid #d0d0d0;',
 
