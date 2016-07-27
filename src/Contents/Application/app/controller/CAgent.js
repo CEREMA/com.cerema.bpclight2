@@ -207,6 +207,7 @@ App.controller.define('CAgent', {
 	},
     rdv_drag_create: function( me, resource, date, e, eOpts )
     {
+        console.log(me.agent);
         if (me.agent==-1) e.stopEvent();
     },
     rdv_oncontextmenu: function( me, record, e, eOpts ) {                            
