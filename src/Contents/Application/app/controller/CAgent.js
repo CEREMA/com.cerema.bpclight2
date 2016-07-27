@@ -184,7 +184,9 @@ App.controller.define('CAgent', {
             "VRDVScheduler": {
                 show: "VRDVScheduler_onshow",
                 itemcontextmenu:: function(me, record, item, index, e) {
-                    alert('x');
+                    
+                    console.log(record);
+                    console.log(item);
                 }
             },
             "VRDVScheduler combo#selectMonth": {
