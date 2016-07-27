@@ -330,7 +330,7 @@ App.controller.define('CAgent', {
 		App.get(me,'combo#selectAnnee').setValue(now.getFullYear());		
         
         var data=[];
-        App.DB.get('bpclight://medic_rdv',function(response){
+        /*App.DB.get('bpclight://medic_rdv',function(response){
             for (var i=0;i<response.data.length;i++) {
                 data.push({
                     internalId      : response.data[i].rdv_id,
@@ -341,7 +341,7 @@ App.controller.define('CAgent', {
                 });
             };
             App.get(me,'schedulergrid').getEventStore().loadData(data);
-        });
+        });*/
         
     },
     add_rdv: function(me)

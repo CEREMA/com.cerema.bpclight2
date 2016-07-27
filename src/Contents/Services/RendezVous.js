@@ -1,6 +1,6 @@
 RendezVous = {
     getAll: function(o,cb) {
-        RendezVous.using('db').model('bpclight','select * from medic_rdv',cb);
+        RendezVous.using('db').model('bpclight','select *,rdv_id internalId from medic_rdv',cb);
     }
 };
 
