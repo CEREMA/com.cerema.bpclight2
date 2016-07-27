@@ -239,8 +239,7 @@ App.controller.define('CAgent', {
             App.DB.post('bpclight://medic_rdv',rec,function() {
                 grid.getStore().load();
             });
-        };
-        
+        };        
     },
     TRendezVous_onshow: function(me) {
         var store=App.store.create('bpclight://medic_rdv?kage='+me.up('window').agent.Kage);
