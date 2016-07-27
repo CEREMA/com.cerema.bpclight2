@@ -146,7 +146,7 @@ App.view.define('VRDVScheduler', {
                     height : 30
                 },
                 eventRenderer : function (event, resource, data) {
-                    data.style = 'border-color:' + resource.get('Color');
+                    data.style = 'border-color:red';
                     return event.data;
                 },
 				columns     : [
