@@ -207,7 +207,7 @@ App.controller.define('CAgent', {
     rdv_oncontextmenu: function( view, record, e, eOpts ) {                            
         e.stopEvent();
         console.log(record.data);
-        console.log(index);
+
         Ext.create('Ext.menu.Menu', {
             items: [
 			{
