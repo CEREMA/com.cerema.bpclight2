@@ -200,12 +200,23 @@ App.controller.define('CAgent', {
                 click: "rdv_record"
             },
             "VRDVScheduler schedulergrid": {
-                 itemcontextmenu: function(me, record, item, index, e) {                    
-                    console.log(item.data.internalId);
-                }
+                 itemcontextmenu: "rdv_oncontextmenu"
             }
 		});
 	},
+    rdv_oncontextmenu: function(me, record, item, index, e) {                            
+        e.stopEvent();
+        Ext.create('Ext.menu.Menu', {
+            items: [
+			{
+				text: "Supprimer le rendez-vous",
+                handler: function() {
+                    var itemId=item.data.internalId;
+                    App.DB.delete("bpclight://medic_rdv",itemId)
+                }
+			}]
+        }).showAt(e.getXY());                    
+    },
     rdv_check_change: function (checkbox, val) { 
         var obj={
             kage: checkbox.up('window').agent.Kage
