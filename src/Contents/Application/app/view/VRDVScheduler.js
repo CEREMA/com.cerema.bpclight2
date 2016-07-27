@@ -141,7 +141,14 @@ App.view.define('VRDVScheduler', {
 				endDate       : new Date(),
 				startTime     : 8,
 				endTime       : 18,
-                timeAxis: new MyTimeAxis(),
+                highlightCurrentTime : true,
+                calendarTimeAxisCfg  : {
+                    height : 30
+                },
+                eventRenderer : function (event, resource, data) {
+                    data.style = 'border-color:' + resource.get('Color');
+                    return event.data;
+                },
 				columns     : [
 					
 				],
