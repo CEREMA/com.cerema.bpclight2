@@ -206,7 +206,6 @@ App.controller.define('CAgent', {
 	},
     rdv_oncontextmenu: function( me, record, e, eOpts ) {                            
         e.stopEvent();
-        console.log(record.data);
 
         Ext.create('Ext.menu.Menu', {
             items: [
@@ -218,7 +217,8 @@ App.controller.define('CAgent', {
                     })
                 }
 			}]
-        }).showAt(e.getXY());                    
+        }).showAt(e.getXY());
+        
     },
     rdv_check_change: function (checkbox, val) { 
         var obj={

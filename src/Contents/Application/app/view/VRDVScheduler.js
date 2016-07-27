@@ -1,3 +1,36 @@
+Ext.define('MyTimeAxis', {
+    extend     : "Ext.ux.Scheduler.data.TimeAxis",
+    continuous : false,
+
+    generateTicks : function (start, end, unit, increment) {
+        // Use our own custom time intervals for day time-axis
+        if (unit === Ext.ux.Scheduler.util.Date.DAY) {
+            var ticks = [],
+                intervalEnd;
+
+            while (start < end) {
+                if (start.getDay() === 5) {
+                    // Fridays are lazy days, working 10am - 4pm
+                    start.setHours(8);
+                    intervalEnd = Ext.ux.Scheduler.util.Date.add(start, Ext.ux.Scheduler.util.Date.HOUR, 10);
+                } else {
+                    start.setHours(8);
+                    intervalEnd = Ext.ux.Scheduler.util.Date.add(start, Ext.ux.Scheduler.util.Date.HOUR, 10);
+                }
+
+                ticks.push({
+                    start : start,
+                    end   : intervalEnd
+                });
+                start = Ext.ux.Scheduler.util.Date.add(start, Ext.ux.Scheduler.util.Date.DAY, 1);
+            }
+            return ticks;
+        } else {
+            return this.callParent(arguments);
+        }
+    }
+});
+
 App.view.define('VRDVScheduler', {
     extend: "Ext.window.Window",
     alias: 'widget.VRDVScheduler',
@@ -108,6 +141,7 @@ App.view.define('VRDVScheduler', {
 				endDate       : new Date(),
 				startTime     : 8,
 				endTime       : 18,
+                timeAxis: new MyTimeAxis(),
 				columns     : [
 					
 				],
