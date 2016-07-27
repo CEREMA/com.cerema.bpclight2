@@ -182,7 +182,10 @@ App.controller.define('CAgent', {
             VRDVScheduler
             */
             "VRDVScheduler": {
-                show: "VRDVScheduler_onshow"
+                show: "VRDVScheduler_onshow",
+                eventcontextmenu: function( scheduler, eventRecord, e, eOpts ) {
+                    alert('x');
+                }
             },
             "VRDVScheduler combo#selectMonth": {
                 select: "rdv_month"
