@@ -182,12 +182,7 @@ App.controller.define('CAgent', {
             VRDVScheduler
             */
             "VRDVScheduler": {
-                show: "VRDVScheduler_onshow",
-                itemcontextmenu: function(me, record, item, index, e) {
-                    
-                    console.log(record);
-                    console.log(item);
-                }
+                show: "VRDVScheduler_onshow"
             },
             "VRDVScheduler combo#selectMonth": {
                 select: "rdv_month"
@@ -203,6 +198,12 @@ App.controller.define('CAgent', {
             },
             "VRDVScheduler button#record": {
                 click: "rdv_record"
+            },
+            "VRDVScheduler schedulergrid": {
+                 itemcontextmenu: function(me, record, item, index, e) {                    
+                    console.log(record);
+                    console.log(item);
+                }
             }
 		});
 	},
