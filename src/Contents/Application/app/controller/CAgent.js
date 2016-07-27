@@ -200,10 +200,15 @@ App.controller.define('CAgent', {
                 click: "rdv_record"
             },
             "VRDVScheduler schedulergrid": {
-                 eventcontextmenu: "rdv_oncontextmenu"
+                 eventcontextmenu: "rdv_oncontextmenu",
+                 beforeeventdrag: "rdv_drag_create"
             }
 		});
 	},
+    rdv_drag_create: function( me, resource, date, e, eOpts )
+    {
+        if (me.agent==-1) e.stopEvent();
+    },
     rdv_oncontextmenu: function( me, record, e, eOpts ) {                            
         e.stopEvent();
 
@@ -327,22 +332,7 @@ App.controller.define('CAgent', {
         App.get(me,'combo#selectMonth').setValue(now.getMonth());
         
 		App.get(me,'combo#selectAnnee').bindStore(store_year);
-		App.get(me,'combo#selectAnnee').setValue(now.getFullYear());		
-        
-        var data=[];
-        /*App.DB.get('bpclight://medic_rdv',function(response){
-            for (var i=0;i<response.data.length;i++) {
-                data.push({
-                    internalId      : response.data[i].rdv_id,
-                    ResourceId      : 1,
-                    Name            : response.data[i].Name, 
-                    StartDate       : response.data[i].StartDate,
-                    EndDate         : response.data[i].EndDate
-                });
-            };
-            App.get(me,'schedulergrid').getEventStore().loadData(data);
-        });*/
-        //App.get(me,'schedulergrid').getEventStore().load();
+		App.get(me,'combo#selectAnnee').setValue(now.getFullYear());
         
     },
     add_rdv: function(me)
