@@ -183,7 +183,7 @@ App.controller.define('CAgent', {
             */
             "VRDVScheduler": {
                 show: "VRDVScheduler_onshow",
-                eventcontextmenu: function( scheduler, eventRecord, e, eOpts ) {
+                itemcontextmenu:: function(me, record, item, index, e) {
                     alert('x');
                 }
             },
