@@ -155,7 +155,7 @@ App.view.define('VRDVScheduler', {
                 allowOverlap    : false,
                 resourceStore   : App.store.create({data:[{Id:'D',Name:'Docteur'}]},'resources'),
                 
-				eventStore      : App.store.create({data:[]},'events'),
+				eventStore      : App.store.create('App.RendezVous.getAll','events'),
                 
 				style           : 'border: 1px solid #d0d0d0;',
 
