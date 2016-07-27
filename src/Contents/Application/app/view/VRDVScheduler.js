@@ -145,9 +145,8 @@ App.view.define('VRDVScheduler', {
                 calendarTimeAxisCfg  : {
                     height : 30
                 },
-                eventRenderer : function (event, resource, data) {
-                    data.style = 'border-color:red';
-                    return event.data;
+                timeAxis    : {
+                    autoAdjust  : false
                 },
 				columns     : [
 					
@@ -161,7 +160,7 @@ App.view.define('VRDVScheduler', {
 				style           : 'border: 1px solid #d0d0d0;',
 
 				showTodayLine : true,
-				viewPreset   : 'hourAndDay',
+				viewPreset    : 'week',
 				mode                 : 'calendar',
 				//eventResizeHandles   : 'end',
 				snapToIncrement      : true,
