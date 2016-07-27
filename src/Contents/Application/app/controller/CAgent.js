@@ -204,7 +204,7 @@ App.controller.define('CAgent', {
             }
 		});
 	},
-    rdv_oncontextmenu: function(me, record, item, index, e) {                            
+    rdv_oncontextmenu: function( view, record, e, eOpts ) {                            
         e.stopEvent();
         console.log(record.data);
         console.log(index);
