@@ -206,13 +206,13 @@ App.controller.define('CAgent', {
 	},
     rdv_oncontextmenu: function(me, record, item, index, e) {                            
         e.stopEvent();
+        console.log(record.data);
+        console.log(index);
         Ext.create('Ext.menu.Menu', {
             items: [
 			{
 				text: "Supprimer le rendez-vous",
                 handler: function() {
-                    console.log(record.data);
-                    console.log(index);
                     App.DB.del("bpclight://medic_rdv",[record.data.internalId],function(){
                         me.getStore().load();
                     })
