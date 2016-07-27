@@ -342,6 +342,7 @@ App.controller.define('CAgent', {
             };
             App.get(me,'schedulergrid').getEventStore().loadData(data);
         });*/
+        App.get(me,'schedulergrid').getEventStore().load();
         
     },
     add_rdv: function(me)
