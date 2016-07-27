@@ -205,10 +205,9 @@ App.controller.define('CAgent', {
             }
 		});
 	},
-    rdv_drag_add: function( me, resource, date, e, eOpts )
-    {
-        console.log(me.up('window').agent);
-        if (me.up('window').agent==-1) e.stopEvent();
+    rdv_drag_add: function( me, newEventRecord, resources, eOpts )
+    {        
+        if (me.up('window').agent==-1) return false;
     },
     rdv_oncontextmenu: function( me, record, e, eOpts ) {                            
         e.stopEvent();
