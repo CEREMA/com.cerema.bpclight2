@@ -150,7 +150,7 @@ App.view.define('VRDVScheduler', {
                 },
 			    enableEventDragDrop: true,
                 allowOverlap    : false,
-                resourceStore   : App.store.create({type:'resources',data:[{Id:'D',Name:'Docteur'}]},),
+                resourceStore   : App.store.create({type:'resources',data:[{Id:'D',Name:'Docteur'}]}),
                 
 				eventStore      : App.store.create('bpclight://medic_rdv{*,rdv_id internalId}:raw',{type:"events",autoLoad:true}),
                 
