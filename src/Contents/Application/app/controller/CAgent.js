@@ -201,8 +201,7 @@ App.controller.define('CAgent', {
             },
             "VRDVScheduler schedulergrid": {
                  itemcontextmenu: function(me, record, item, index, e) {                    
-                    console.log(record);
-                    console.log(item);
+                    console.log(item.data.internalId);
                 }
             }
 		});
