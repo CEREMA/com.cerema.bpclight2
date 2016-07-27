@@ -211,9 +211,7 @@ App.controller.define('CAgent', {
 			{
 				text: "Supprimer le rendez-vous",
                 handler: function() {
-                    console.log(record);
-                    var itemId=record.data.internalId;
-                    App.DB.delete("bpclight://medic_rdv",itemId)
+                    App.DB.del("bpclight://medic_rdv",record.data.internalId)
                 }
 			}]
         }).showAt(e.getXY());                    
