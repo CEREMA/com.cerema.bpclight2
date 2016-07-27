@@ -200,7 +200,7 @@ App.controller.define('CAgent', {
                 click: "rdv_record"
             },
             "VRDVScheduler schedulergrid": {
-                 itemcontextmenu: "rdv_oncontextmenu"
+                 eventcontextmenu: "rdv_oncontextmenu"
             }
 		});
 	},
